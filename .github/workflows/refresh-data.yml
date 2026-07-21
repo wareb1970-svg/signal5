@@ -1,0 +1,34 @@
+name: Refresh Signal 5 data
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 */6 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: signal5-data-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Refresh public signals
+        env:
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+          GDELT_CLOUD_API_KEY: ${{ secrets.GDELT_CLOUD_API_KEY }}
+        run: node scripts/update-data.mjs
+      - name: Commit refreshed data
+        run: |
+          git config user.name "signal5-data-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data.json history.json
+          git diff --cached --quiet || git commit -m "Refresh public signal data"
+          git push
