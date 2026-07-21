@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Signal 5</title>
+  <meta name="description" content="Public risk intelligence for everyone.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">SIGNAL <span>5</span></div>
+    <nav>
+      <a href="#today">Today</a>
+      <a href="#how">How it works</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">PUBLIC RISK INTELLIGENCE FOR EVERYONE</p>
+      <h1>Know what is changing before it changes your life.</h1>
+      <p class="lead">Signal 5 explains what changed, why it matters, and how confident the evidence is.</p>
+      <a class="button" href="#today">See today’s signal</a>
+    </section>
+
+    <section id="today" class="dashboard">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">TODAY’S PUBLIC VIEW</p>
+          <h2>Overall conditions</h2>
+        </div>
+        <p id="updated"></p>
+      </div>
+
+      <article class="overall-card">
+        <div class="score">
+          <span id="overall-score">--</span>
+          <small>/100</small>
+        </div>
+        <div>
+          <p class="label">Current level</p>
+          <h3 id="overall-level">Loading...</h3>
+          <p id="overall-summary"></p>
+          <p id="overall-confidence" class="confidence"></p>
+        </div>
+      </article>
+
+      <div id="category-grid" class="grid"></div>
+    </section>
+
+    <section id="how" class="how">
+      <p class="eyebrow">HOW IT WORKS</p>
+      <h2>Three questions. Clear answers.</h2>
+
+      <div class="grid">
+        <article>
+          <h3>What changed?</h3>
+          <p>Signals are compared with recent baselines.</p>
+        </article>
+
+        <article>
+          <h3>Why does it matter?</h3>
+          <p>Changes are translated into plain language.</p>
+        </article>
+
+        <article>
+          <h3>How sure are we?</h3>
+          <p>Every assessment includes a confidence level.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>Signal 5</strong>
+    <p>Information for understanding risk, not financial, legal, or emergency advice.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

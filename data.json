@@ -1,0 +1,41 @@
+{
+  "updated": "Demo data",
+  "overall": {
+    "score": 54,
+    "level": "Watch",
+    "summary": "Several systems are showing elevated movement, but conditions are not broadly unstable.",
+    "confidence": "Confidence: Moderate"
+  },
+  "categories": [
+    {
+      "name": "Economy",
+      "score": 48,
+      "summary": "Mixed movement across prices, labor, and consumer activity."
+    },
+    {
+      "name": "Supply Chains",
+      "score": 57,
+      "summary": "Some transportation and inventory pressure is visible."
+    },
+    {
+      "name": "Infrastructure",
+      "score": 43,
+      "summary": "Most monitored systems remain within normal ranges."
+    },
+    {
+      "name": "Conflict",
+      "score": 62,
+      "summary": "Elevated international activity deserves continued attention."
+    },
+    {
+      "name": "Energy",
+      "score": 51,
+      "summary": "Prices and supply remain uneven but manageable."
+    },
+    {
+      "name": "Public Safety",
+      "score": 46,
+      "summary": "No broad national shift is currently detected."
+    }
+  ]
+}
