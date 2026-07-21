@@ -3,80 +3,81 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Signal 5</title>
-  <meta name="description" content="Public risk intelligence for everyone.">
+  <title>Signal 5 | Public Risk Intelligence</title>
+  <meta name="description" content="Signal 5 explains measurable changes across major systems without predictions, politics, or panic.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="topbar">
-    <div class="brand">SIGNAL <span>5</span></div>
-    <nav>
-      <a href="#today">Today</a>
-      <a href="#how">How it works</a>
-    </nav>
+    <a class="brand" href="#top">SIGNAL <span>5</span></a>
+    <nav><a href="#signals">Signals</a><a href="#method">Method</a><a href="#about">About</a></nav>
+    <button id="theme-toggle" class="icon-button" aria-label="Toggle display theme">◐</button>
   </header>
 
-  <main>
+  <main id="top">
     <section class="hero">
-      <p class="eyebrow">PUBLIC RISK INTELLIGENCE FOR EVERYONE</p>
-      <h1>Know what is changing before it changes your life.</h1>
-      <p class="lead">Signal 5 explains what changed, why it matters, and how confident the evidence is.</p>
-      <a class="button" href="#today">See today’s signal</a>
+      <div>
+        <p class="eyebrow">PUBLIC RISK INTELLIGENCE FOR EVERYONE</p>
+        <h1>See what changed.<br><span>Understand what matters.</span></h1>
+        <p class="lead">Signal 5 turns measurable movement across major systems into clear, calm explanations—without predictions, politics, or panic.</p>
+        <div class="actions">
+          <a class="button" href="#signals">View today’s signals</a>
+          <a class="text-link" href="#method">How scoring works →</a>
+        </div>
+      </div>
+
+      <aside class="hero-panel">
+        <p class="panel-label">Today’s level</p>
+        <div class="hero-score"><strong id="overall-score">--</strong><span>/100</span></div>
+        <h2 id="overall-level">Loading…</h2>
+        <p id="overall-summary"></p>
+        <div class="confidence-row"><span id="confidence-dot"></span><span id="overall-confidence"></span></div>
+        <p id="updated" class="updated"></p>
+      </aside>
     </section>
 
-    <section id="today" class="dashboard">
+    <section id="signals" class="section">
       <div class="section-head">
-        <div>
-          <p class="eyebrow">TODAY’S PUBLIC VIEW</p>
-          <h2>Overall conditions</h2>
-        </div>
-        <p id="updated"></p>
+        <div><p class="eyebrow">CURRENT SIGNALS</p><h2>What is moving now</h2></div>
+        <div class="legend"><span>0 Normal</span><span>50 Watch</span><span>100 Severe</span></div>
       </div>
-
-      <article class="overall-card">
-        <div class="score">
-          <span id="overall-score">--</span>
-          <small>/100</small>
-        </div>
-        <div>
-          <p class="label">Current level</p>
-          <h3 id="overall-level">Loading...</h3>
-          <p id="overall-summary"></p>
-          <p id="overall-confidence" class="confidence"></p>
-        </div>
-      </article>
-
-      <div id="category-grid" class="grid"></div>
+      <div id="category-grid" class="signal-grid" aria-live="polite"></div>
     </section>
 
-    <section id="how" class="how">
-      <p class="eyebrow">HOW IT WORKS</p>
-      <h2>Three questions. Clear answers.</h2>
+    <section class="section change-section">
+      <div class="section-head"><div><p class="eyebrow">KEY CHANGES</p><h2>What deserves attention</h2></div></div>
+      <div id="change-list" class="change-list"></div>
+    </section>
 
-      <div class="grid">
-        <article>
-          <h3>What changed?</h3>
-          <p>Signals are compared with recent baselines.</p>
-        </article>
-
-        <article>
-          <h3>Why does it matter?</h3>
-          <p>Changes are translated into plain language.</p>
-        </article>
-
-        <article>
-          <h3>How sure are we?</h3>
-          <p>Every assessment includes a confidence level.</p>
-        </article>
+    <section id="method" class="section method">
+      <p class="eyebrow">THE SIGNAL 5 METHOD</p>
+      <h2>Four questions. No guesswork.</h2>
+      <div class="method-grid">
+        <article><span>01</span><h3>What changed?</h3><p>Current measurements are compared with recent historical baselines.</p></article>
+        <article><span>02</span><h3>Why?</h3><p>Known drivers and source evidence are summarized in plain language.</p></article>
+        <article><span>03</span><h3>Does it matter?</h3><p>We explain practical significance without exaggerating the impact.</p></article>
+        <article><span>04</span><h3>How sure are we?</h3><p>Every assessment includes a visible confidence rating and limitations.</p></article>
       </div>
+      <div class="scale">
+        <div><strong>0–29</strong><span>Normal</span></div>
+        <div><strong>30–49</strong><span>Monitor</span></div>
+        <div><strong>50–69</strong><span>Watch</span></div>
+        <div><strong>70–84</strong><span>Elevated</span></div>
+        <div><strong>85–100</strong><span>Severe</span></div>
+      </div>
+    </section>
+
+    <section id="about" class="section about">
+      <div><p class="eyebrow">WHY SIGNAL 5</p><h2>Understanding risk should not require a terminal, a trading desk, or a political agenda.</h2></div>
+      <p>Signal 5 is being built as a public intelligence layer anyone can understand. The public version stays useful. Paid tools will add history, personalization, alerts, speed, and deeper analysis—not hide the basic truth behind a paywall.</p>
     </section>
   </main>
 
   <footer>
-    <strong>Signal 5</strong>
-    <p>Information for understanding risk, not financial, legal, or emergency advice.</p>
+    <div class="brand">SIGNAL <span>5</span></div>
+    <p>Information for understanding measurable risk. Not financial, legal, medical, or emergency advice.</p>
+    <p>Prototype data is illustrative until live sources are connected.</p>
   </footer>
-
   <script src="app.js"></script>
 </body>
 </html>
