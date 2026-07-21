@@ -13,7 +13,7 @@
 <body>
 <header class="topbar">
   <a class="brand" href="#top">SIGNAL <span>5</span></a>
-  <nav><a href="#signals">Signals</a><a href="#changes">Changes</a><a href="#analytics">Analytics</a><a href="#history">History</a><a href="#method">Method</a><a href="#sources">Sources</a></nav>
+  <nav><a href="#signals">Signals</a><a href="#changes">Changes</a><a href="#analytics">Analytics</a><a href="#history">History</a><a href="#method">Method</a><a href="#sources">Sources</a><a href="#workspace">My Signal 5</a></nav>
   <div class="header-actions"><button id="install-app" class="secondary-button compact" hidden>Install</button><button id="theme-toggle" class="icon-button" aria-label="Toggle display theme">◐</button></div>
 </header>
 
@@ -89,8 +89,50 @@
     <div id="limitations" class="limitations"></div>
   </section>
 
+
+  <section id="workspace" class="section workspace-section">
+    <div class="section-head">
+      <div><p class="eyebrow">MY SIGNAL 5</p><h2>Personal intelligence workspace</h2></div>
+      <span class="muted-note">Stored privately on this device</span>
+    </div>
+    <div class="workspace-grid">
+      <article class="workspace-card">
+        <h3>Workspace</h3>
+        <label>Workspace name<input id="workspace-name" maxlength="40" placeholder="My dashboard"></label>
+        <label>View preset<select id="workspace-preset">
+          <option value="all">All systems</option>
+          <option value="operations">Operations</option>
+          <option value="household">Household awareness</option>
+          <option value="technology">Technology risk</option>
+          <option value="custom">My saved signals</option>
+        </select></label>
+        <div class="button-row"><button id="save-workspace" class="button">Save workspace</button><button id="reset-workspace" class="secondary-button">Reset</button></div>
+        <p id="workspace-message" role="status"></p>
+      </article>
+      <article class="workspace-card">
+        <h3>Alert center</h3>
+        <div id="alert-center" class="alert-center"></div>
+        <button id="enable-notifications" class="secondary-button">Enable browser alerts</button>
+        <p class="fine-print">Browser alerts are evaluated when Signal 5 is opened or refreshed. Continuous email and SMS alerts require a later hosted backend.</p>
+      </article>
+      <article class="workspace-card">
+        <h3>Backup and reporting</h3>
+        <div class="stacked-actions">
+          <button id="download-profile" class="secondary-button">Download preferences</button>
+          <label class="file-button">Restore preferences<input id="restore-profile" type="file" accept="application/json" hidden></label>
+          <button id="print-report" class="secondary-button">Print intelligence report</button>
+        </div>
+        <p class="fine-print">Your downloaded preference file contains watchlists and thresholds only—not browsing history or personal information.</p>
+      </article>
+    </div>
+    <div class="threshold-panel">
+      <div><h3>Per-signal thresholds</h3><p>Choose exactly when each saved signal deserves attention.</p></div>
+      <div id="threshold-list" class="threshold-list"></div>
+    </div>
+  </section>
+
   <section id="alerts" class="section alert-section">
-    <div><p class="eyebrow">PERSONAL WATCHLIST</p><h2>Keep your priorities visible.</h2><p>Save categories and choose a threshold. Preferences remain private on this device. The dashboard highlights matching signals whenever you return.</p></div>
+    <div><p class="eyebrow">QUICK THRESHOLD</p><h2>Set a default watch level.</h2><p>Save categories and choose a threshold. Preferences remain private on this device. The dashboard highlights matching signals whenever you return.</p></div>
     <form id="alert-form" class="alert-form">
       <label>Watchlist threshold<select id="alert-threshold"><option value="50">Watch and above</option><option value="70">Elevated and above</option><option value="30">Monitor and above</option></select></label>
       <button class="button" type="submit">Save preference</button>

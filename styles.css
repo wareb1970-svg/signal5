@@ -21,3 +21,27 @@ main{width:min(1180px,90vw);margin:auto}.hero{min-height:calc(100vh - 72px);disp
 .analytics-grid p{color:var(--muted);font-size:.82rem;margin:0}
 @media(max-width:1000px){.analytics-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:560px){.analytics-grid{grid-template-columns:1fr}}
+
+.workspace-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.workspace-card,.threshold-panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px}
+.workspace-card h3,.threshold-panel h3{margin-top:0}
+.workspace-card label{display:flex;flex-direction:column;gap:7px;margin-bottom:14px;color:var(--muted);font-size:.82rem}
+.workspace-card input,.workspace-card select,.threshold-list select{width:100%;padding:11px;border:1px solid var(--line);border-radius:9px;background:var(--surface);color:var(--text)}
+.stacked-actions{display:grid;gap:10px}
+.file-button{display:block!important;text-align:center;padding:11px 14px;border:1px solid var(--line);border-radius:9px;cursor:pointer;color:var(--text)!important;margin:0!important}
+.fine-print{font-size:.75rem;color:var(--muted);line-height:1.45}
+.alert-center{display:grid;gap:8px;margin-bottom:14px}
+.alert-hit,.alert-clear{display:grid;grid-template-columns:1fr auto;gap:4px 10px;padding:11px;border:1px solid var(--line);border-radius:10px}
+.alert-hit small{grid-column:1/-1;color:var(--muted)}
+.alert-clear{display:flex;flex-direction:column}
+.threshold-panel{margin-top:16px;display:grid;grid-template-columns:280px 1fr;gap:24px}
+.threshold-list{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.threshold-list label{display:grid;grid-template-columns:1fr 145px;align-items:center;gap:10px;border-bottom:1px solid var(--line);padding:8px 0}
+@media(max-width:900px){.workspace-grid{grid-template-columns:1fr}.threshold-panel{grid-template-columns:1fr}.threshold-list{grid-template-columns:1fr}}
+@media print{
+  .topbar,.toolbar,.actions,.save-button,.button-row,.alert-section,#workspace button,.file-button,#install-app,#theme-toggle{display:none!important}
+  body{background:#fff;color:#000}
+  .section,.hero,.hero-panel,.signal-card,.workspace-card,.threshold-panel{break-inside:avoid;background:#fff!important;color:#000!important;border-color:#bbb!important}
+  .details{display:block!important}
+  a{color:#000!important;text-decoration:none}
+}

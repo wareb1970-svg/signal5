@@ -4,6 +4,92 @@ let saved=new Set(JSON.parse(localStorage.getItem('signal5-watchlist')||'[]'));
 const $=id=>document.getElementById(id);
 const escapeHtml=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const clamp=(n,min,max)=>Math.min(max,Math.max(min,n));
+
+const PROFILE_KEY='signal5-profile-v1';
+const PRESETS={
+  all:[],
+  operations:['Economy','Supply Chains','Infrastructure','Energy','Weather','Cybersecurity'],
+  household:['Economy','Energy','Public Safety','Weather','Earthquakes'],
+  technology:['Infrastructure','Cybersecurity','Space Weather'],
+  custom:[]
+};
+function defaultProfile(){
+  return {name:'My dashboard',preset:'all',watchlist:[...saved],defaultThreshold:Number(localStorage.getItem('signal5-threshold')||50),thresholds:{},lastAlerted:{}};
+}
+function loadProfile(){
+  try{return {...defaultProfile(),...JSON.parse(localStorage.getItem(PROFILE_KEY)||'{}')}}
+  catch{return defaultProfile()}
+}
+let profile=loadProfile();
+saved=new Set(profile.watchlist||[...saved]);
+function saveProfile(message='Preferences saved on this device.'){
+  profile.watchlist=[...saved];
+  localStorage.setItem(PROFILE_KEY,JSON.stringify(profile));
+  localStorage.setItem('signal5-watchlist',JSON.stringify([...saved]));
+  localStorage.setItem('signal5-threshold',String(profile.defaultThreshold||50));
+  if($('workspace-message'))$('workspace-message').textContent=message;
+}
+function thresholdFor(name){return Number(profile.thresholds?.[name]??profile.defaultThreshold??50)}
+function activePresetNames(){
+  if(profile.preset==='custom')return [...saved];
+  const names=PRESETS[profile.preset]||[];
+  return names.length?names:null;
+}
+function renderThresholds(){
+  const names=[...saved].sort();
+  $('threshold-list').innerHTML=names.length?names.map(name=>`
+    <label><span>${escapeHtml(name)}</span><select data-threshold-name="${escapeHtml(name)}">
+      ${[30,50,70,85].map(v=>`<option value="${v}" ${thresholdFor(name)===v?'selected':''}>${levelFor(v)} (${v}+)</option>`).join('')}
+    </select></label>`).join(''):'<div class="empty-state">Save signals with the star button to configure individual thresholds.</div>';
+  document.querySelectorAll('[data-threshold-name]').forEach(select=>select.addEventListener('change',()=>{
+    profile.thresholds[select.dataset.thresholdName]=Number(select.value);saveProfile();renderSignals();renderAlertCenter();
+  }));
+}
+function currentHits(){
+  if(!signalData)return[];
+  return signalData.categories.filter(x=>saved.has(x.name)&&x.score>=thresholdFor(x.name)).sort((a,b)=>b.score-a.score);
+}
+function renderAlertCenter(){
+  const hits=currentHits();
+  $('alert-center').innerHTML=hits.length?hits.map(x=>`<div class="alert-hit"><strong>${escapeHtml(x.name)}</strong><span>${x.score}/100 · ${levelFor(x.score)}</span><small>Threshold ${thresholdFor(x.name)}+</small></div>`).join(''):'<div class="alert-clear"><strong>No saved thresholds crossed.</strong><span>Your current watchlist is below its configured alert levels.</span></div>';
+}
+function maybeNotify(){
+  if(!('Notification'in window)||Notification.permission!=='granted')return;
+  const hits=currentHits(),stamp=signalData.generatedAt||signalData.updated;
+  const fresh=hits.filter(x=>profile.lastAlerted?.[x.name]!==stamp);
+  if(!fresh.length)return;
+  const body=fresh.slice(0,3).map(x=>`${x.name}: ${x.score}`).join(' · ')+(fresh.length>3?` · +${fresh.length-3} more`:'');
+  new Notification('Signal 5 threshold crossed',{body,icon:'icon.svg'});
+  profile.lastAlerted={...(profile.lastAlerted||{}),...Object.fromEntries(fresh.map(x=>[x.name,stamp]))};saveProfile('');
+}
+function renderWorkspace(){
+  $('workspace-name').value=profile.name||'My dashboard';
+  $('workspace-preset').value=profile.preset||'all';
+  renderThresholds();renderAlertCenter();
+}
+function downloadProfile(){
+  const safe={version:1,exportedAt:new Date().toISOString(),profile:{...profile,watchlist:[...saved],lastAlerted:{}}};
+  const blob=new Blob([JSON.stringify(safe,null,2)],{type:'application/json'}),a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);a.download='signal5-preferences.json';a.click();URL.revokeObjectURL(a.href);
+}
+function restoreProfile(file){
+  const reader=new FileReader();
+  reader.onload=()=>{
+    try{
+      const parsed=JSON.parse(reader.result),incoming=parsed.profile||parsed;
+      profile={...defaultProfile(),...incoming,thresholds:{...(incoming.thresholds||{})},lastAlerted:{}};
+      saved=new Set(profile.watchlist||[]);
+      saveProfile('Preferences restored successfully.');renderWorkspace();updateStats();renderSignals();
+    }catch{$('workspace-message').textContent='That file is not a valid Signal 5 preference backup.'}
+  };
+  reader.readAsText(file);
+}
+function printReport(){
+  document.body.classList.add('print-report');
+  window.print();
+  setTimeout(()=>document.body.classList.remove('print-report'),500);
+}
+
 function briefText(){return `Signal 5 daily brief — ${signalData.updated}\nOverall: ${signalData.overall.score}/100 (${signalData.overall.level||levelFor(signalData.overall.score)})\n\n${signalData.changes.map(x=>`${x.category}: ${x.title} (${x.direction}) — ${x.detail}`).join('\n')}\n\n${location.href}`;}
 function updateStats(){
   $('tracked-count').textContent=signalData.categories.length;
@@ -13,15 +99,15 @@ function updateStats(){
 }
 function renderSignals(){
   const query=$('signal-search').value.trim().toLowerCase(),minimum=Number($('level-filter').value),savedOnly=$('saved-filter').checked;
-  const preference=Number(localStorage.getItem('signal5-threshold')||50);
+  const presetNames=activePresetNames();
   const items=signalData.categories.filter(item=>{
     const haystack=[item.name,item.summary,item.changed,item.matters,(item.sources||[]).join(' ')].join(' ').toLowerCase();
-    return item.score>=minimum&&(!query||haystack.includes(query))&&(!savedOnly||saved.has(item.name));
+    return item.score>=minimum&&(!query||haystack.includes(query))&&(!savedOnly||saved.has(item.name))&&(!presetNames||presetNames.includes(item.name));
   });
   $('category-grid').innerHTML=items.map(item=>{
     const delta=Number(item.delta||0),trendClass=delta>0?'trend-up':delta<0?'trend-down':'',trend=delta>0?`↑ ${delta}`:delta<0?`↓ ${Math.abs(delta)}`:'—';
     const sourceState=item.status==='live'?'LIVE':item.status==='partial'?'PARTIAL':'BASELINE';
-    const highlighted=saved.has(item.name)&&item.score>=preference?' threshold-hit':'';
+    const highlighted=saved.has(item.name)&&item.score>=thresholdFor(item.name)?' threshold-hit':'';
     return `<article class="signal-card${highlighted}" data-name="${escapeHtml(item.name)}">
       <div class="signal-main" tabindex="0" role="button" aria-expanded="false">
         <div class="signal-top"><div><div class="signal-name">${escapeHtml(item.name)}</div><div class="signal-level">${levelFor(item.score)} · <span class="data-state">${sourceState}</span></div></div><div class="signal-score">${item.score}</div></div>
@@ -40,7 +126,7 @@ function renderSignals(){
   });
   document.querySelectorAll('.save-button').forEach(button=>button.addEventListener('click',()=>{
     const name=button.closest('.signal-card').dataset.name;saved.has(name)?saved.delete(name):saved.add(name);
-    localStorage.setItem('signal5-watchlist',JSON.stringify([...saved]));updateStats();renderSignals();
+    saveProfile();updateStats();renderSignals();renderThresholds();renderAlertCenter();
   }));
 }
 function renderChanges(){
@@ -100,15 +186,36 @@ async function load(){
   $('updated').textContent=`Updated ${signalData.updated}`;$('data-mode').textContent=(signalData.mode||'data').toUpperCase();
   $('footer-version').textContent=`Method version ${signalData.methodVersion||'—'}`;
   const failed=Number(signalData.sourceHealth?.failed||0);if(failed)$('overall-summary').textContent+=` ${failed} source group${failed===1?' is':'s are'} currently unavailable.`;
-  updateStats();renderSignals();renderChanges();renderAnalytics();renderSources();renderHistory();
+  updateStats();renderSignals();renderChanges();renderAnalytics();renderSources();renderHistory();renderWorkspace();maybeNotify();
 }
 ['signal-search','level-filter','saved-filter'].forEach(id=>$(id).addEventListener('input',renderSignals));
 $('reset-filters').addEventListener('click',()=>{$('signal-search').value='';$('level-filter').value='0';$('saved-filter').checked=false;renderSignals()});
 $('copy-brief').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(briefText());$('copy-brief').textContent='Copied';setTimeout(()=>$('copy-brief').textContent='Copy brief',1500)}catch{alert(briefText())}});
 $('share-brief').addEventListener('click',async()=>{if(navigator.share)await navigator.share({title:'Signal 5 daily brief',text:briefText(),url:location.href});else{await navigator.clipboard.writeText(briefText());$('share-brief').textContent='Copied';setTimeout(()=>$('share-brief').textContent='Share daily brief',1500)}});
 $('export-csv').addEventListener('click',exportCsv);$('history-series').addEventListener('change',renderHistory);
-$('alert-form').addEventListener('submit',e=>{e.preventDefault();localStorage.setItem('signal5-threshold',$('alert-threshold').value);$('alert-message').textContent='Watchlist threshold saved on this device.';renderSignals()});
-$('alert-threshold').value=localStorage.getItem('signal5-threshold')||'50';
+$('alert-form').addEventListener('submit',e=>{e.preventDefault();profile.defaultThreshold=Number($('alert-threshold').value);saveProfile();$('alert-message').textContent='Default threshold saved on this device.';renderSignals();renderThresholds();renderAlertCenter()});
+$('alert-threshold').value=String(profile.defaultThreshold||50);
+
+$('save-workspace').addEventListener('click',()=>{
+  profile.name=$('workspace-name').value.trim()||'My dashboard';
+  profile.preset=$('workspace-preset').value;
+  saveProfile('Workspace saved.');renderSignals();
+});
+$('workspace-preset').addEventListener('change',()=>{profile.preset=$('workspace-preset').value;saveProfile('View preset applied.');renderSignals()});
+$('reset-workspace').addEventListener('click',()=>{
+  profile=defaultProfile();profile.watchlist=[];profile.thresholds={};saved=new Set();
+  saveProfile('Workspace reset.');renderWorkspace();updateStats();renderSignals();
+});
+$('download-profile').addEventListener('click',downloadProfile);
+$('restore-profile').addEventListener('change',e=>{const file=e.target.files?.[0];if(file)restoreProfile(file);e.target.value=''});
+$('print-report').addEventListener('click',printReport);
+$('enable-notifications').addEventListener('click',async()=>{
+  if(!('Notification'in window)){$('workspace-message').textContent='This browser does not support notifications.';return}
+  const permission=await Notification.requestPermission();
+  $('workspace-message').textContent=permission==='granted'?'Browser alerts enabled.':'Browser alerts were not enabled.';
+  maybeNotify();
+});
+
 const root=document.documentElement,savedTheme=localStorage.getItem('signal5-theme');if(savedTheme)root.dataset.theme=savedTheme;
 $('theme-toggle').addEventListener('click',()=>{const next=root.dataset.theme==='light'?'dark':'light';root.dataset.theme=next;localStorage.setItem('signal5-theme',next)});
 window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredInstall=e;$('install-app').hidden=false});
