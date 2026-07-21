@@ -1,0 +1,50 @@
+{
+  "sources": [
+    {
+      "id": "nws-alerts",
+      "name": "National Weather Service active alerts",
+      "agency": "NOAA/NWS",
+      "url": "https://api.weather.gov/alerts/active",
+      "keyRequired": false,
+      "categories": [
+        "Infrastructure",
+        "Public Safety"
+      ]
+    },
+    {
+      "id": "usgs-earthquakes",
+      "name": "USGS significant earthquakes",
+      "agency": "USGS",
+      "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_week.geojson",
+      "keyRequired": false,
+      "categories": [
+        "Infrastructure",
+        "Public Safety"
+      ]
+    },
+    {
+      "id": "fred-economy",
+      "name": "FRED economic observations",
+      "agency": "Federal Reserve Bank of St. Louis",
+      "url": "https://api.stlouisfed.org/fred/series/observations",
+      "keyRequired": true,
+      "secret": "FRED_API_KEY",
+      "categories": [
+        "Economy",
+        "Supply Chains",
+        "Energy"
+      ]
+    },
+    {
+      "id": "gdelt-conflict",
+      "name": "GDELT Cloud events",
+      "agency": "GDELT Project",
+      "url": "https://gdeltcloud.com/api/v2/events/summary",
+      "keyRequired": true,
+      "secret": "GDELT_CLOUD_API_KEY",
+      "categories": [
+        "Conflict"
+      ]
+    }
+  ]
+}

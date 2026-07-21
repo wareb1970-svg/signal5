@@ -1,20 +1,37 @@
 # Signal 5
 
-Signal 5 is a public risk-intelligence prototype designed to explain measurable change without predictions, politics, or panic.
+Signal 5 is a deployable public-risk intelligence MVP. It turns named public indicators into explainable category scores without presenting predictions as facts.
 
-## Finished prototype features
+## What is complete
 
-- responsive public dashboard
-- six expandable signal categories
-- search and minimum-risk filtering
-- persistent personal watchlist
-- seven-day movement indicators
-- transparent source-group labels
-- daily brief copy function
-- local alert-preference storage
-- dark/light display mode
-- keyboard-accessible interactions
-- explicit prototype disclosure
+- Responsive risk dashboard
+- Search, level filtering, watchlists and local alert preferences
+- Expandable explanations and direct source links
+- Source-health reporting and reduced-confidence behavior
+- Historical score storage
+- Automated GitHub Actions data refresh every six hours
+- Automated GitHub Pages deployment
+- No runtime framework or paid hosting dependency
+
+## Public sources
+
+- National Weather Service active alerts
+- USGS significant-earthquake feed
+- FRED economic series when `FRED_API_KEY` is configured
+- GDELT Cloud conflict events when `GDELT_CLOUD_API_KEY` is configured
+
+Signal 5 preserves existing values when an optional keyed source is unavailable and lists the failure in `data.json`. It never silently invents a replacement measurement.
+
+## Required repository setup
+
+GitHub Pages: **Settings → Pages → Source: GitHub Actions**
+
+Optional repository secrets:
+
+- `FRED_API_KEY`
+- `GDELT_CLOUD_API_KEY`
+
+Without those secrets, NWS and USGS still refresh and the dashboard identifies unavailable source groups.
 
 ## Run locally
 
@@ -24,6 +41,12 @@ python3 -m http.server 8000
 
 Open `http://localhost:8000`.
 
-## Production work still requiring infrastructure
+## Refresh data locally
 
-The interface is complete as a front-end prototype. A genuine live product still requires a backend, verified public-source ingestion, documented scoring weights, authentication, a database, and an email delivery provider. The UI does not falsely claim those services are active.
+```bash
+node scripts/update-data.mjs
+```
+
+## Method
+
+Each category uses an explicitly disclosed indicator or proxy. Time-series sources are standardized against their recent baseline. Event-count sources use bounded transformations. Scores are clamped to 0–100 and mapped to Normal, Monitor, Watch, Elevated and Severe. These are indicators, not forecasts or emergency instructions.

@@ -1,0 +1,17 @@
+{
+  "methodVersion": "1.0.0",
+  "points": [
+    {
+      "timestamp": "2026-07-21T19:00:00Z",
+      "overall": 54,
+      "categories": {
+        "Economy": 48,
+        "Supply Chains": 57,
+        "Infrastructure": 43,
+        "Conflict": 62,
+        "Energy": 51,
+        "Public Safety": 46
+      }
+    }
+  ]
+}

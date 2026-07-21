@@ -20,7 +20,10 @@
         "Prices",
         "Labor",
         "Credit"
-      ]
+      ],
+      "status": "seed",
+      "lastObserved": null,
+      "sourceDetails": []
     },
     {
       "name": "Supply Chains",
@@ -34,7 +37,10 @@
         "Freight",
         "Ports",
         "Inventories"
-      ]
+      ],
+      "status": "seed",
+      "lastObserved": null,
+      "sourceDetails": []
     },
     {
       "name": "Infrastructure",
@@ -48,7 +54,10 @@
         "Power",
         "Transport",
         "Networks"
-      ]
+      ],
+      "status": "seed",
+      "lastObserved": null,
+      "sourceDetails": []
     },
     {
       "name": "Conflict",
@@ -62,7 +71,10 @@
         "Events",
         "Diplomacy",
         "Shipping"
-      ]
+      ],
+      "status": "seed",
+      "lastObserved": null,
+      "sourceDetails": []
     },
     {
       "name": "Energy",
@@ -76,7 +88,10 @@
         "Prices",
         "Supply",
         "Storage"
-      ]
+      ],
+      "status": "seed",
+      "lastObserved": null,
+      "sourceDetails": []
     },
     {
       "name": "Public Safety",
@@ -90,7 +105,10 @@
         "Incidents",
         "Alerts",
         "Regional reports"
-      ]
+      ],
+      "status": "seed",
+      "lastObserved": null,
+      "sourceDetails": []
     }
   ],
   "changes": [
@@ -112,5 +130,13 @@
       "detail": "Physical availability remains broadly stable, limiting immediate practical impact.",
       "direction": "\u2191 2"
     }
+  ],
+  "mode": "live",
+  "generatedBy": "Signal 5 public-data engine",
+  "methodVersion": "1.0.0",
+  "limitations": [
+    "Scores are risk indicators, not forecasts.",
+    "Missing sources reduce confidence rather than being silently replaced.",
+    "Some categories use public proxy indicators because no single authoritative measure exists."
   ]
 }

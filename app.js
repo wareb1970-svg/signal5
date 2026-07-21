@@ -30,7 +30,7 @@ function renderSignals(){
         <div class="meter"><span style="width:${item.score}%"></span></div>
         <p class="signal-summary">${escapeHtml(item.summary)}</p>
         <div class="trend-row"><span>7-day movement</span><strong class="${trendClass}">${trend}</strong></div>
-        <div class="details"><strong>WHAT CHANGED</strong><p>${escapeHtml(item.changed)}</p><strong>WHY IT MATTERS</strong><p>${escapeHtml(item.matters)}</p><strong>CONFIDENCE</strong><p>${escapeHtml(item.confidence)}</p><strong>SOURCE GROUPS</strong><p>${escapeHtml((item.sources||[]).join(', '))}</p></div>
+        <div class="details"><strong>WHAT CHANGED</strong><p>${escapeHtml(item.changed)}</p><strong>WHY IT MATTERS</strong><p>${escapeHtml(item.matters)}</p><strong>CONFIDENCE</strong><p>${escapeHtml(item.confidence)}</p><strong>SOURCE GROUPS</strong><p>${(item.sourceDetails||[]).length ? item.sourceDetails.map(s=>`<a href="${escapeHtml(s.url)}" target="_blank" rel="noopener"><strong>${escapeHtml(s.name)}</strong></a><br>${escapeHtml(s.detail||'')}<br><small>Observed ${escapeHtml(s.observed||'unknown')}</small>`).join('<br><br>') : escapeHtml((item.sources||[]).join(', '))}</p></div>
       </div>
       <button class="save-button ${saved.has(item.name)?'saved':''}" aria-label="${saved.has(item.name)?'Remove from':'Save to'} watchlist">${saved.has(item.name)?'★':'☆'}</button>
     </article>`;
@@ -60,6 +60,8 @@ async function loadSignal(){
   document.getElementById('overall-summary').textContent=signalData.overall.summary;
   document.getElementById('overall-confidence').textContent=`${signalData.overall.confidence} confidence`;
   document.getElementById('updated').textContent=`Updated ${signalData.updated}`;
+  const health=signalData.sourceHealth;
+  if(health&&health.failed){document.getElementById('overall-summary').textContent+=` ${health.failed} source group${health.failed===1?' is':'s are'} currently unavailable.`;}
   document.getElementById('change-list').innerHTML=signalData.changes.map(item=>`<article class="change-item"><div class="change-tag">${escapeHtml(item.category)}</div><div><strong>${escapeHtml(item.title)}</strong><p>${escapeHtml(item.detail)}</p></div><div class="change-direction">${escapeHtml(item.direction)}</div></article>`).join('');
   updateStats();renderSignals();
 }
