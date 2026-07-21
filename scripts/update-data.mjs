@@ -107,6 +107,50 @@ function analytics(history,current){
   return {sevenDayChange:Number(seven.toFixed(1)),thirtyDayChange:Number(thirty.toFixed(1)),volatility:Number(stdev(recent).toFixed(1)),biggestMover:movers[0]||null,biggestImprovement:improvements[0]||null,observationCount:points.length};
 }
 
+
+function confidenceWeight(text=''){
+  const value=String(text).toLowerCase();
+  if(value.startsWith('high'))return 1;
+  if(value.startsWith('moderate-high'))return .9;
+  if(value.startsWith('moderate'))return .75;
+  if(value.startsWith('low-moderate'))return .5;
+  return .35;
+}
+function movementPhrase(change){
+  const magnitude=Math.abs(change);
+  if(magnitude<2)return 'was nearly unchanged';
+  if(magnitude<5)return change>0?'edged higher':'edged lower';
+  if(magnitude<10)return change>0?'moved higher':'moved lower';
+  return change>0?'rose sharply':'fell sharply';
+}
+function buildIntelligence(categories,sourceHealth){
+  const candidates=categories
+    .filter(c=>c.status!=='baseline'&&(c.sourceDetails||[]).length)
+    .map(c=>{
+      const change=Number(c.delta||0),source=c.sourceDetails[0]||{};
+      return {
+        category:c.name,change,score:Number(c.score),weightedImpact:Math.abs(change)*confidenceWeight(c.confidence),
+        explanation:`${c.name} ${movementPhrase(change)} to ${c.score}/100. ${c.changed||c.summary}`,
+        sourceName:source.name||c.sources?.[0]||'Named public source',
+        sourceUrl:source.url||'',observed:source.observed||c.lastObserved||''
+      };
+    })
+    .sort((a,b)=>b.weightedImpact-a.weightedImpact);
+  const material=candidates.filter(x=>Math.abs(x.change)>=2).slice(0,5);
+  const net=mean(categories.filter(c=>c.status!=='baseline').map(c=>Number(c.delta||0)));
+  const direction=net>2?'Higher pressure':net<-2?'Lower pressure':'Broadly stable';
+  const lead=material[0];
+  const title=lead?`${lead.category} is the leading measurable driver`:'No single category is driving the dashboard';
+  const summary=material.length
+    ? `${direction}. ${material.length} evidence-backed driver${material.length===1?'':'s'} account for the most meaningful movement in this refresh. The strongest measured change is ${lead.category.toLowerCase()}, which ${movementPhrase(lead.change)}.`
+    : `${direction}. Current score changes are too small to support a stronger assessment.`;
+  return {
+    generatedAt:now.toISOString(),method:'Structured deterministic synthesis v1',
+    direction,title,summary,drivers:material,
+    audit:{driverCount:material.length,activeCategoryCount:categories.filter(c=>c.status!=='baseline').length,failedSourceGroups:Number(sourceHealth?.failed||0)}
+  };
+}
+
 const data=JSON.parse(await fs.readFile(DATA_FILE,'utf8'));
 const history=JSON.parse(await fs.readFile(HISTORY_FILE,'utf8'));
 const categories=new Map((data.categories||[]).map(x=>[x.name,{...x,sourceDetails:x.sourceDetails||[]}]));
@@ -123,12 +167,13 @@ data.overall.level=levelFor(data.overall.score);
 data.overall.summary=`${data.categories.filter(x=>x.status==='live').length} categories are live and ${data.categories.filter(x=>x.status==='partial').length} are partial. ${failures.length?`${failures.length} source group${failures.length===1?' is':'s are'} unavailable.`:'All configured source groups refreshed.'}`;
 data.overall.confidence=failures.length>2?'Low-moderate':failures.length?'Moderate':'Moderate-high';
 data.updated=now.toLocaleString('en-US',{timeZone:'America/New_York',month:'long',day:'numeric',year:'numeric',hour:'numeric',minute:'2-digit',timeZoneName:'short'});
-data.generatedAt=now.toISOString();data.mode='live';data.methodVersion='2.0.0';
+data.generatedAt=now.toISOString();data.mode='live';data.methodVersion='2.1.0';
 data.sourceHealth={successful:successful.length,failed:failures.length,successfulSources:successful,failures};
 data.sourceGroups=sources.length;
+data.intelligence=buildIntelligence(data.categories,data.sourceHealth);
 const point={timestamp:now.toISOString(),overall:data.overall.score,categories:Object.fromEntries(data.categories.map(x=>[x.name,x.score]))};
 data.analytics=analytics(history,point);
-history.methodVersion='2.0.0';history.points.push(point);history.points=history.points.slice(-730);
+history.methodVersion='2.1.0';history.points.push(point);history.points=history.points.slice(-730);
 await fs.writeFile(DATA_FILE,JSON.stringify(data,null,2)+'\n');
 await fs.writeFile(HISTORY_FILE,JSON.stringify(history,null,2)+'\n');
 console.log(JSON.stringify({updated:data.updated,overall:data.overall,analytics:data.analytics,sourceHealth:data.sourceHealth},null,2));

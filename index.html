@@ -13,7 +13,7 @@
 <body>
 <header class="topbar">
   <a class="brand" href="#top">SIGNAL <span>5</span></a>
-  <nav><a href="#signals">Signals</a><a href="#changes">Changes</a><a href="#analytics">Analytics</a><a href="#history">History</a><a href="#method">Method</a><a href="#sources">Sources</a><a href="#workspace">My Signal 5</a></nav>
+  <nav><a href="#signals">Signals</a><a href="#intelligence">Intelligence</a><a href="#changes">Changes</a><a href="#analytics">Analytics</a><a href="#history">History</a><a href="#method">Method</a><a href="#sources">Sources</a><a href="#workspace">My Signal 5</a></nav>
   <div class="header-actions"><button id="install-app" class="secondary-button compact" hidden>Install</button><button id="theme-toggle" class="icon-button" aria-label="Toggle display theme">◐</button></div>
 </header>
 
@@ -53,6 +53,27 @@
     <p id="result-count" class="result-count"></p>
     <div id="category-grid" class="signal-grid" aria-live="polite"></div>
     <div id="empty-state" class="empty-state" hidden>No signals match those filters.</div>
+  </section>
+
+
+  <section id="intelligence" class="section intelligence-section">
+    <div class="section-head">
+      <div><p class="eyebrow">GROUNDED INTELLIGENCE</p><h2>Why the dashboard moved</h2></div>
+      <span id="intelligence-badge" class="status-pill">EVIDENCE LINKED</span>
+    </div>
+    <div class="intelligence-layout">
+      <article class="brief-card">
+        <div class="brief-heading"><span>DAILY ASSESSMENT</span><strong id="brief-direction">—</strong></div>
+        <h3 id="brief-title">Loading the current assessment…</h3>
+        <p id="brief-summary"></p>
+        <div id="brief-drivers" class="driver-list"></div>
+      </article>
+      <aside class="audit-card">
+        <h3>Assessment audit</h3>
+        <div id="assessment-audit"></div>
+        <p class="fine-print">The assessment is generated from structured score movement and named source observations. It does not use an unconstrained language model.</p>
+      </aside>
+    </div>
   </section>
 
   <section id="changes" class="section change-section">

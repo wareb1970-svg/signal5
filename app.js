@@ -129,6 +129,31 @@ function renderSignals(){
     saveProfile();updateStats();renderSignals();renderThresholds();renderAlertCenter();
   }));
 }
+
+function renderIntelligence(){
+  const intel=signalData.intelligence||{};
+  $('brief-direction').textContent=intel.direction||'Stable';
+  $('brief-title').textContent=intel.title||'No material movement detected';
+  $('brief-summary').textContent=intel.summary||'The current evidence does not show a material change from the prior observation.';
+  const drivers=intel.drivers||[];
+  $('brief-drivers').innerHTML=drivers.length?drivers.map((d,i)=>`
+    <article class="driver-card">
+      <span class="driver-rank">${i+1}</span>
+      <div><strong>${escapeHtml(d.category)}</strong><p>${escapeHtml(d.explanation)}</p>
+      <small>${escapeHtml(d.sourceName||'Source unavailable')} · observed ${escapeHtml(d.observed||'unknown')}</small></div>
+      <div class="driver-change ${Number(d.change)>=0?'trend-up':'trend-down'}">${Number(d.change)>=0?'+':''}${Number(d.change).toFixed(1)}</div>
+    </article>`).join(''):'<div class="empty-state">No material drivers were identified in this refresh.</div>';
+  const audit=intel.audit||{};
+  $('assessment-audit').innerHTML=[
+    ['Evidence-backed drivers',audit.driverCount??drivers.length],
+    ['Live or partial categories',audit.activeCategoryCount??signalData.categories.filter(x=>x.status!=='baseline').length],
+    ['Failed source groups',audit.failedSourceGroups??signalData.sourceHealth?.failed??0],
+    ['Method',intel.method||'Structured deterministic synthesis']
+  ].map(([label,value])=>`<div><span>${escapeHtml(label)}</span><strong>${escapeHtml(value)}</strong></div>`).join('');
+  $('intelligence-badge').textContent=audit.failedSourceGroups?'REDUCED EVIDENCE':'EVIDENCE LINKED';
+  $('intelligence-badge').classList.toggle('warning',Number(audit.failedSourceGroups)>0);
+}
+
 function renderChanges(){
   $('change-list').innerHTML=(signalData.changes||[]).map(item=>`<article class="change-item"><div class="change-tag">${escapeHtml(item.category)}</div><div><strong>${escapeHtml(item.title)}</strong><p>${escapeHtml(item.detail)}</p></div><div class="change-direction">${escapeHtml(item.direction)}</div></article>`).join('')||'<div class="empty-state">No material changes are listed for this refresh.</div>';
 }
@@ -186,7 +211,7 @@ async function load(){
   $('updated').textContent=`Updated ${signalData.updated}`;$('data-mode').textContent=(signalData.mode||'data').toUpperCase();
   $('footer-version').textContent=`Method version ${signalData.methodVersion||'—'}`;
   const failed=Number(signalData.sourceHealth?.failed||0);if(failed)$('overall-summary').textContent+=` ${failed} source group${failed===1?' is':'s are'} currently unavailable.`;
-  updateStats();renderSignals();renderChanges();renderAnalytics();renderSources();renderHistory();renderWorkspace();maybeNotify();
+  updateStats();renderSignals();renderIntelligence();renderChanges();renderAnalytics();renderSources();renderHistory();renderWorkspace();maybeNotify();
 }
 ['signal-search','level-filter','saved-filter'].forEach(id=>$(id).addEventListener('input',renderSignals));
 $('reset-filters').addEventListener('click',()=>{$('signal-search').value='';$('level-filter').value='0';$('saved-filter').checked=false;renderSignals()});

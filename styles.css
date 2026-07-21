@@ -45,3 +45,21 @@ main{width:min(1180px,90vw);margin:auto}.hero{min-height:calc(100vh - 72px);disp
   .details{display:block!important}
   a{color:#000!important;text-decoration:none}
 }
+
+.intelligence-layout{display:grid;grid-template-columns:minmax(0,2fr) minmax(260px,1fr);gap:16px}
+.brief-card,.audit-card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px}
+.brief-heading{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:.78rem;letter-spacing:.08em}
+.brief-heading strong{color:var(--text);font-size:.85rem}
+.brief-card h3{font-size:1.5rem;margin:14px 0 8px}
+.brief-card>p{color:var(--muted);line-height:1.6}
+.driver-list{display:grid;gap:10px;margin-top:20px}
+.driver-card{display:grid;grid-template-columns:34px 1fr auto;gap:12px;align-items:start;border-top:1px solid var(--line);padding-top:14px}
+.driver-rank{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--surface);font-weight:700}
+.driver-card p{margin:5px 0;color:var(--muted);line-height:1.45}
+.driver-card small{color:var(--muted)}
+.driver-change{font-weight:800;font-size:1.05rem}
+.audit-card h3{margin-top:0}
+.audit-card>div{display:grid;gap:0}
+.audit-card>div>div{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid var(--line)}
+.audit-card span{color:var(--muted);font-size:.82rem}
+@media(max-width:850px){.intelligence-layout{grid-template-columns:1fr}}
