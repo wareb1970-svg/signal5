@@ -1,0 +1,18 @@
+{
+  "name": "Signal 5 Public Risk Intelligence",
+  "short_name": "Signal 5",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#090d12",
+  "theme_color": "#090d12",
+  "description": "Clear, calm public-risk intelligence from measurable public indicators.",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
