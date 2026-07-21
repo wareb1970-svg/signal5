@@ -1,36 +1,29 @@
 # Signal 5
 
-Signal 5 is public AI risk intelligence for everyone.
+Signal 5 is a public risk-intelligence prototype designed to explain measurable change without predictions, politics, or panic.
 
-It answers:
-
-1. What changed?
-2. Why?
-3. Does it matter?
-4. How confident are we?
-
-## Version 2
-
-This static MVP includes:
+## Finished prototype features
 
 - responsive public dashboard
 - six expandable signal categories
-- transparent 0–100 risk scale
-- key-change feed
-- dark/light display toggle
-- keyboard-accessible cards
-- demonstration data stored in `data.json`
+- search and minimum-risk filtering
+- persistent personal watchlist
+- seven-day movement indicators
+- transparent source-group labels
+- daily brief copy function
+- local alert-preference storage
+- dark/light display mode
+- keyboard-accessible interactions
+- explicit prototype disclosure
 
 ## Run locally
-
-Because the application loads JSON, use a local server:
 
 ```bash
 python3 -m http.server 8000
 ```
 
-Then open `http://localhost:8000`.
+Open `http://localhost:8000`.
 
-## Important
+## Production work still requiring infrastructure
 
-The current data is illustrative. Live public sources and automated scoring will be connected in a later build.
+The interface is complete as a front-end prototype. A genuine live product still requires a backend, verified public-source ingestion, documented scoring weights, authentication, a database, and an email delivery provider. The UI does not falsely claim those services are active.

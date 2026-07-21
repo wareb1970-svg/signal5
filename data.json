@@ -1,5 +1,6 @@
 {
   "updated": "July 21, 2026 \u00b7 3:00 PM ET",
+  "sourceGroups": 18,
   "overall": {
     "score": 54,
     "level": "Watch",
@@ -10,57 +11,93 @@
     {
       "name": "Economy",
       "score": 48,
+      "delta": 1,
       "summary": "Mixed movement across prices, labor, credit, and consumer activity.",
       "changed": "Consumer pressure increased modestly while labor indicators remained comparatively stable.",
       "matters": "The combination can affect household spending before it becomes visible in headline economic data.",
-      "confidence": "Moderate \u2014 several measures agree, but the direction is not uniform."
+      "confidence": "Moderate \u2014 several measures agree, but the direction is not uniform.",
+      "sources": [
+        "Prices",
+        "Labor",
+        "Credit"
+      ]
     },
     {
       "name": "Supply Chains",
       "score": 57,
+      "delta": 3,
       "summary": "Transportation and inventory pressure are above the recent baseline.",
       "changed": "Selected freight, delivery-time, and inventory measures moved higher.",
       "matters": "Persistent pressure can reach stores and manufacturers through delays or higher costs.",
-      "confidence": "Moderate \u2014 movement is measurable but not yet broad-based."
+      "confidence": "Moderate \u2014 movement is measurable but not yet broad-based.",
+      "sources": [
+        "Freight",
+        "Ports",
+        "Inventories"
+      ]
     },
     {
       "name": "Infrastructure",
       "score": 43,
+      "delta": -1,
       "summary": "Most monitored systems remain within normal operating ranges.",
       "changed": "Localized interruptions rose, while national-level reliability remained stable.",
       "matters": "Current changes appear manageable unless disruptions begin clustering across regions.",
-      "confidence": "High \u2014 the majority of monitored indicators remain aligned."
+      "confidence": "High \u2014 the majority of monitored indicators remain aligned.",
+      "sources": [
+        "Power",
+        "Transport",
+        "Networks"
+      ]
     },
     {
       "name": "Conflict",
       "score": 62,
+      "delta": 4,
       "summary": "International activity remains elevated and deserves continued attention.",
       "changed": "Operational tempo and diplomatic strain are above their recent baseline.",
       "matters": "Escalation can affect energy, transport, markets, and public confidence even without direct domestic impact.",
-      "confidence": "Moderate \u2014 activity is clear, but future direction is uncertain."
+      "confidence": "Moderate \u2014 activity is clear, but future direction is uncertain.",
+      "sources": [
+        "Events",
+        "Diplomacy",
+        "Shipping"
+      ]
     },
     {
       "name": "Energy",
       "score": 51,
+      "delta": 2,
       "summary": "Prices and supply conditions remain uneven but manageable.",
       "changed": "Short-term price volatility increased while physical supply stayed broadly available.",
       "matters": "Volatility matters most when it persists long enough to affect household and business costs.",
-      "confidence": "Moderate-high \u2014 pricing data is clear; downstream impact is less certain."
+      "confidence": "Moderate-high \u2014 pricing data is clear; downstream impact is less certain.",
+      "sources": [
+        "Prices",
+        "Supply",
+        "Storage"
+      ]
     },
     {
       "name": "Public Safety",
       "score": 46,
+      "delta": 0,
       "summary": "No broad national shift is currently visible.",
       "changed": "Some regional measures rose, but the national pattern remains mixed.",
       "matters": "Regional movement matters locally without necessarily indicating a wider trend.",
-      "confidence": "Moderate \u2014 reporting timing varies across jurisdictions."
+      "confidence": "Moderate \u2014 reporting timing varies across jurisdictions.",
+      "sources": [
+        "Incidents",
+        "Alerts",
+        "Regional reports"
+      ]
     }
   ],
   "changes": [
     {
       "category": "CONFLICT",
       "title": "International activity remains above baseline",
-      "detail": "The signal is elevated, but the available evidence does not establish a clear next direction.",
+      "detail": "The signal is elevated, but the evidence does not establish a clear next direction.",
       "direction": "\u2191 4"
     },
     {
