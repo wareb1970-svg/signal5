@@ -13,7 +13,7 @@
 <body>
 <header class="topbar">
   <a class="brand" href="#top">SIGNAL <span>5</span></a>
-  <nav><a href="#signals">Signals</a><a href="#changes">Changes</a><a href="#history">History</a><a href="#method">Method</a><a href="#sources">Sources</a></nav>
+  <nav><a href="#signals">Signals</a><a href="#changes">Changes</a><a href="#analytics">Analytics</a><a href="#history">History</a><a href="#method">Method</a><a href="#sources">Sources</a></nav>
   <div class="header-actions"><button id="install-app" class="secondary-button compact" hidden>Install</button><button id="theme-toggle" class="icon-button" aria-label="Toggle display theme">◐</button></div>
 </header>
 
@@ -58,6 +58,12 @@
   <section id="changes" class="section change-section">
     <div class="section-head"><div><p class="eyebrow">KEY CHANGES</p><h2>What deserves attention</h2></div><div class="button-row"><button id="copy-brief" class="secondary-button">Copy brief</button><button id="export-csv" class="secondary-button">Export CSV</button></div></div>
     <div id="change-list" class="change-list"></div>
+  </section>
+
+
+  <section id="analytics" class="section">
+    <div class="section-head"><div><p class="eyebrow">SIGNAL ANALYTICS</p><h2>Movement at a glance</h2></div><span class="muted-note">Calculated from stored observations</span></div>
+    <div id="analytics-grid" class="analytics-grid"></div>
   </section>
 
   <section id="history" class="section">

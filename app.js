@@ -59,6 +59,19 @@ function renderSources(){
   ].map(([label,value,detail])=>`<article><strong>${value}</strong><span>${label}</span><p>${detail}</p></article>`).join('');
   $('limitations').innerHTML=(signalData.limitations||[]).map(x=>`<p>• ${escapeHtml(x)}</p>`).join('');
 }
+
+function renderAnalytics(){
+  const a=signalData.analytics||{};
+  const cards=[
+    ['7-day change',Number(a.sevenDayChange||0),`${Number(a.sevenDayChange||0)>=0?'Up':'Down'} ${Math.abs(Number(a.sevenDayChange||0)).toFixed(1)} points`],
+    ['30-day change',Number(a.thirtyDayChange||0),`${Number(a.thirtyDayChange||0)>=0?'Up':'Down'} ${Math.abs(Number(a.thirtyDayChange||0)).toFixed(1)} points`],
+    ['Volatility',Number(a.volatility||0),`${Number(a.volatility||0).toFixed(1)} point standard deviation`],
+    ['Biggest mover',a.biggestMover?.change||0,`${a.biggestMover?.name||'Insufficient history'} ${a.biggestMover?`${a.biggestMover.change>=0?'↑':'↓'} ${Math.abs(a.biggestMover.change).toFixed(1)}`:''}`],
+    ['Biggest improvement',a.biggestImprovement?.change||0,`${a.biggestImprovement?.name||'Insufficient history'} ${a.biggestImprovement?`↓ ${Math.abs(a.biggestImprovement.change).toFixed(1)}`:''}`]
+  ];
+  $('analytics-grid').innerHTML=cards.map(([label,value,detail])=>`<article><span>${escapeHtml(label)}</span><strong>${typeof value==='number'?(value>0?'+':'')+value.toFixed(1):escapeHtml(value)}</strong><p>${escapeHtml(detail)}</p></article>`).join('');
+}
+
 function renderHistory(){
   const select=$('history-series'),points=historyData?.points||[];
   if(!points.length){$('history-chart').innerHTML='<div class="empty-state">History begins after the first completed refresh.</div>';return;}
@@ -87,7 +100,7 @@ async function load(){
   $('updated').textContent=`Updated ${signalData.updated}`;$('data-mode').textContent=(signalData.mode||'data').toUpperCase();
   $('footer-version').textContent=`Method version ${signalData.methodVersion||'—'}`;
   const failed=Number(signalData.sourceHealth?.failed||0);if(failed)$('overall-summary').textContent+=` ${failed} source group${failed===1?' is':'s are'} currently unavailable.`;
-  updateStats();renderSignals();renderChanges();renderSources();renderHistory();
+  updateStats();renderSignals();renderChanges();renderAnalytics();renderSources();renderHistory();
 }
 ['signal-search','level-filter','saved-filter'].forEach(id=>$(id).addEventListener('input',renderSignals));
 $('reset-filters').addEventListener('click',()=>{$('signal-search').value='';$('level-filter').value='0';$('saved-filter').checked=false;renderSignals()});

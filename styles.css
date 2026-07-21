@@ -14,3 +14,10 @@ main{width:min(1180px,90vw);margin:auto}.hero{min-height:calc(100vh - 72px);disp
 .alert-section{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}.alert-section>div>p:last-child{color:var(--muted)}.alert-form{display:grid;gap:14px;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px}.alert-form .button{width:100%}#alert-message{min-height:1.4em;color:var(--good);margin:0}footer{padding:38px 5vw;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 2fr 1fr;gap:30px;color:var(--muted);font-size:.8rem}
 @media(max-width:850px){nav{display:none}.hero{grid-template-columns:1fr;min-height:auto;padding:90px 0}.stats-strip{grid-template-columns:1fr 1fr}.stats-strip div:nth-child(2){border-right:0}.signal-grid{grid-template-columns:1fr 1fr}.method-grid,.source-health{grid-template-columns:1fr 1fr}.alert-section{grid-template-columns:1fr}.change-item{grid-template-columns:1fr}.scale{grid-template-columns:1fr}.scale div{border-right:0;border-bottom:1px solid var(--line)}.toolbar{grid-template-columns:1fr 1fr}footer{grid-template-columns:1fr}.chart-summary{flex-direction:column}}
 @media(max-width:560px){.signal-grid,.method-grid,.source-health,.toolbar,.stats-strip{grid-template-columns:1fr}.stats-strip div{border-right:0;border-bottom:1px solid var(--line)}.section-head,.actions{align-items:flex-start;flex-direction:column}.legend{flex-wrap:wrap}h1{font-size:3.2rem}.hero-panel{padding:25px}.button-row{width:100%}.button-row button{flex:1}}
+.analytics-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.analytics-grid article{padding:22px;background:var(--panel);border:1px solid var(--line);border-radius:15px;display:flex;flex-direction:column}
+.analytics-grid span,.muted-note{color:var(--muted);font-size:.78rem}
+.analytics-grid strong{font-size:1.8rem;margin:8px 0}
+.analytics-grid p{color:var(--muted);font-size:.82rem;margin:0}
+@media(max-width:1000px){.analytics-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:560px){.analytics-grid{grid-template-columns:1fr}}
