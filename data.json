@@ -1,8 +1,8 @@
 {
-  "updated": "July 21, 2026 at 11:49 PM EDT",
+  "updated": "July 22, 2026 at 4:46 AM EDT",
   "sourceGroups": 6,
   "overall": {
-    "score": 82,
+    "score": 84,
     "level": "Elevated",
     "summary": "4 categories are live and 2 are partial. 2 source groups are unavailable.",
     "confidence": "Moderate"
@@ -46,7 +46,7 @@
     },
     {
       "name": "Infrastructure",
-      "score": 74,
+      "score": 87,
       "delta": 0,
       "summary": "Most monitored systems remain within normal operating ranges.",
       "changed": "Localized interruptions rose, while national-level reliability remained stable.",
@@ -58,17 +58,17 @@
         "Networks"
       ],
       "status": "partial",
-      "lastObserved": "2026-07-22T03:48:50+00:00",
+      "lastObserved": "2026-07-22T08:45:41+00:00",
       "sourceDetails": [
         {
           "id": "nws-alerts",
           "name": "National Weather Service active alerts",
           "url": "https://api.weather.gov/alerts/active",
-          "observed": "2026-07-22T03:48:50+00:00",
-          "detail": "Weather component: 563 active alerts; 148 severe or extreme."
+          "observed": "2026-07-22T08:45:41+00:00",
+          "detail": "Weather component: 547 active alerts; 119 severe or extreme."
         }
       ],
-      "level": "Elevated"
+      "level": "Severe"
     },
     {
       "name": "Conflict",
@@ -108,7 +108,7 @@
     },
     {
       "name": "Public Safety",
-      "score": 70,
+      "score": 83,
       "delta": 0,
       "summary": "No broad national shift is currently visible.",
       "changed": "Some regional measures rose, but the national pattern remains mixed.",
@@ -120,38 +120,38 @@
         "Regional reports"
       ],
       "status": "partial",
-      "lastObserved": "2026-07-22T03:48:50+00:00",
+      "lastObserved": "2026-07-22T08:45:41+00:00",
       "sourceDetails": [
         {
           "id": "nws-alerts",
           "name": "National Weather Service active alerts",
           "url": "https://api.weather.gov/alerts/active",
-          "observed": "2026-07-22T03:48:50+00:00",
-          "detail": "Weather component: 563 active alerts; 148 severe or extreme."
+          "observed": "2026-07-22T08:45:41+00:00",
+          "detail": "Weather component: 547 active alerts; 119 severe or extreme."
         }
       ],
       "level": "Elevated"
     },
     {
       "name": "Weather",
-      "score": 100,
-      "delta": 50,
+      "score": 98,
+      "delta": -2,
       "summary": "National weather pressure is calculated from active official alerts.",
-      "changed": "There are 563 active actual alerts, including 148 severe or extreme alerts.",
+      "changed": "There are 547 active actual alerts, including 119 severe or extreme alerts.",
       "matters": "Widespread or severe weather can affect travel, utilities, emergency response, and household safety.",
       "confidence": "Moderate-high — direct NWS feed; alert counts do not measure realized damage.",
       "sources": [
         "National Weather Service active alerts"
       ],
       "status": "live",
-      "lastObserved": "2026-07-22T03:48:50+00:00",
+      "lastObserved": "2026-07-22T08:45:41+00:00",
       "sourceDetails": [
         {
           "id": "nws-alerts",
           "name": "National Weather Service active alerts",
           "url": "https://api.weather.gov/alerts/active",
-          "observed": "2026-07-22T03:48:50+00:00",
-          "detail": "563 active actual alerts; 148 severe or extreme."
+          "observed": "2026-07-22T08:45:41+00:00",
+          "detail": "547 active actual alerts; 119 severe or extreme."
         }
       ],
       "level": "Severe"
@@ -159,7 +159,7 @@
     {
       "name": "Earthquakes",
       "score": 68,
-      "delta": 18,
+      "delta": 0,
       "summary": "Seismic pressure reflects significant earthquakes reported during the past week.",
       "changed": "USGS reports 3 significant earthquakes; the largest magnitude is 7.3.",
       "matters": "Significant earthquakes can create localized life-safety, infrastructure, and supply-chain consequences.",
@@ -168,13 +168,13 @@
         "USGS significant earthquakes, past week"
       ],
       "status": "live",
-      "lastObserved": "2026-07-22T03:49:05.000Z",
+      "lastObserved": "2026-07-22T08:45:58.000Z",
       "sourceDetails": [
         {
           "id": "usgs-earthquakes",
           "name": "USGS significant earthquakes, past week",
           "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_week.geojson",
-          "observed": "2026-07-22T03:49:05.000Z",
+          "observed": "2026-07-22T08:45:58.000Z",
           "detail": "3 significant events; maximum magnitude 7.3."
         }
       ],
@@ -183,7 +183,7 @@
     {
       "name": "Cybersecurity",
       "score": 90,
-      "delta": 40,
+      "delta": 0,
       "summary": "Cyber pressure reflects new vulnerabilities confirmed as exploited in the wild.",
       "changed": "CISA added 9 known exploited vulnerabilities in seven days and 28 in 30 days.",
       "matters": "Newly exploited vulnerabilities increase patching urgency for affected organizations, but do not mean every user is exposed.",
@@ -206,27 +206,27 @@
     },
     {
       "name": "Space Weather",
-      "score": 88,
-      "delta": 38,
+      "score": 77,
+      "delta": -11,
       "summary": "Space-weather pressure uses recent NOAA SWPC alert products.",
-      "changed": "NOAA SWPC issued 11 alert products during the past seven days.",
+      "changed": "NOAA SWPC issued 10 alert products during the past seven days.",
       "matters": "Strong geomagnetic and solar activity can affect radio, navigation, satellites, and some power-grid operations.",
       "confidence": "Moderate-high — official NOAA feed; product counts are a proxy for operational severity.",
       "sources": [
         "NOAA Space Weather Prediction Center alerts"
       ],
       "status": "live",
-      "lastObserved": "2026-07-21 17:09:41.817",
+      "lastObserved": "2026-07-22 06:52:19.410",
       "sourceDetails": [
         {
           "id": "noaa-swpc-alerts",
           "name": "NOAA Space Weather Prediction Center alerts",
           "url": "https://services.swpc.noaa.gov/products/alerts.json",
-          "observed": "2026-07-21 17:09:41.817",
-          "detail": "11 products issued in seven days; 10 matched alert or warning language."
+          "observed": "2026-07-22 06:52:19.410",
+          "detail": "10 products issued in seven days; 8 matched alert or warning language."
         }
       ],
-      "level": "Severe"
+      "level": "Elevated"
     }
   ],
   "changes": [
@@ -257,7 +257,7 @@
     "Missing sources reduce confidence rather than being silently replaced.",
     "Some categories use public proxy indicators because no single authoritative measure exists."
   ],
-  "generatedAt": "2026-07-22T03:49:38.224Z",
+  "generatedAt": "2026-07-22T08:46:41.982Z",
   "sourceHealth": {
     "successful": 4,
     "failed": 2,
@@ -273,55 +273,35 @@
     ]
   },
   "intelligence": {
-    "generatedAt": "2026-07-22T03:49:38.224Z",
+    "generatedAt": "2026-07-22T08:46:41.982Z",
     "method": "Structured deterministic synthesis v1",
-    "direction": "Higher pressure",
-    "title": "Weather is the leading measurable driver",
-    "summary": "Higher pressure. 4 evidence-backed drivers account for the most meaningful movement in this refresh. The strongest measured change is weather, which rose sharply.",
+    "direction": "Broadly stable",
+    "title": "Space Weather is the leading measurable driver",
+    "summary": "Broadly stable. 2 evidence-backed drivers account for the most meaningful movement in this refresh. The strongest measured change is space weather, which fell sharply.",
     "drivers": [
       {
-        "category": "Weather",
-        "change": 50,
-        "score": 100,
-        "weightedImpact": 45,
-        "explanation": "Weather rose sharply to 100/100. There are 563 active actual alerts, including 148 severe or extreme alerts.",
-        "sourceName": "National Weather Service active alerts",
-        "sourceUrl": "https://api.weather.gov/alerts/active",
-        "observed": "2026-07-22T03:48:50+00:00"
-      },
-      {
-        "category": "Cybersecurity",
-        "change": 40,
-        "score": 90,
-        "weightedImpact": 40,
-        "explanation": "Cybersecurity rose sharply to 90/100. CISA added 9 known exploited vulnerabilities in seven days and 28 in 30 days.",
-        "sourceName": "CISA Known Exploited Vulnerabilities Catalog",
-        "sourceUrl": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
-        "observed": "2026-07-21T15:12:01.557Z"
-      },
-      {
         "category": "Space Weather",
-        "change": 38,
-        "score": 88,
-        "weightedImpact": 34.2,
-        "explanation": "Space Weather rose sharply to 88/100. NOAA SWPC issued 11 alert products during the past seven days.",
+        "change": -11,
+        "score": 77,
+        "weightedImpact": 9.9,
+        "explanation": "Space Weather fell sharply to 77/100. NOAA SWPC issued 10 alert products during the past seven days.",
         "sourceName": "NOAA Space Weather Prediction Center alerts",
         "sourceUrl": "https://services.swpc.noaa.gov/products/alerts.json",
-        "observed": "2026-07-21 17:09:41.817"
+        "observed": "2026-07-22 06:52:19.410"
       },
       {
-        "category": "Earthquakes",
-        "change": 18,
-        "score": 68,
-        "weightedImpact": 18,
-        "explanation": "Earthquakes rose sharply to 68/100. USGS reports 3 significant earthquakes; the largest magnitude is 7.3.",
-        "sourceName": "USGS significant earthquakes, past week",
-        "sourceUrl": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_week.geojson",
-        "observed": "2026-07-22T03:49:05.000Z"
+        "category": "Weather",
+        "change": -2,
+        "score": 98,
+        "weightedImpact": 1.8,
+        "explanation": "Weather edged lower to 98/100. There are 547 active actual alerts, including 119 severe or extreme alerts.",
+        "sourceName": "National Weather Service active alerts",
+        "sourceUrl": "https://api.weather.gov/alerts/active",
+        "observed": "2026-07-22T08:45:41+00:00"
       }
     ],
     "audit": {
-      "driverCount": 4,
+      "driverCount": 2,
       "activeCategoryCount": 10,
       "failedSourceGroups": 2
     }
@@ -329,12 +309,12 @@
   "analytics": {
     "sevenDayChange": 0,
     "thirtyDayChange": 0,
-    "volatility": 14,
+    "volatility": 13.7,
     "biggestMover": {
       "name": "Economy",
       "change": 0
     },
     "biggestImprovement": null,
-    "observationCount": 2
+    "observationCount": 3
   }
 }
