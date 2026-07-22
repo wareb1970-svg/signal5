@@ -1,5 +1,5 @@
 {
-  "methodVersion": "1.0.0",
+  "methodVersion": "2.1.0",
   "points": [
     {
       "timestamp": "2026-07-21T19:00:00Z",
@@ -11,6 +11,22 @@
         "Conflict": 62,
         "Energy": 51,
         "Public Safety": 46
+      }
+    },
+    {
+      "timestamp": "2026-07-22T03:49:38.224Z",
+      "overall": 82,
+      "categories": {
+        "Economy": 48,
+        "Supply Chains": 57,
+        "Infrastructure": 74,
+        "Conflict": 62,
+        "Energy": 51,
+        "Public Safety": 70,
+        "Weather": 100,
+        "Earthquakes": 68,
+        "Cybersecurity": 90,
+        "Space Weather": 88
       }
     }
   ]

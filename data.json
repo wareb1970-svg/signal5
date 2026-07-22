@@ -1,10 +1,10 @@
 {
-  "updated": "July 21, 2026 \u00b7 3:00 PM ET",
-  "sourceGroups": 18,
+  "updated": "July 21, 2026 at 11:49 PM EDT",
+  "sourceGroups": 6,
   "overall": {
-    "score": 54,
-    "level": "Watch",
-    "summary": "Several monitored systems are showing meaningful movement, but conditions are not broadly unstable.",
+    "score": 82,
+    "level": "Elevated",
+    "summary": "4 categories are live and 2 are partial. 2 source groups are unavailable.",
     "confidence": "Moderate"
   },
   "categories": [
@@ -15,7 +15,7 @@
       "summary": "Mixed movement across prices, labor, credit, and consumer activity.",
       "changed": "Consumer pressure increased modestly while labor indicators remained comparatively stable.",
       "matters": "The combination can affect household spending before it becomes visible in headline economic data.",
-      "confidence": "Moderate \u2014 several measures agree, but the direction is not uniform.",
+      "confidence": "Moderate — several measures agree, but the direction is not uniform.",
       "sources": [
         "Prices",
         "Labor",
@@ -23,7 +23,8 @@
       ],
       "status": "seed",
       "lastObserved": null,
-      "sourceDetails": []
+      "sourceDetails": [],
+      "level": "Monitor"
     },
     {
       "name": "Supply Chains",
@@ -32,7 +33,7 @@
       "summary": "Transportation and inventory pressure are above the recent baseline.",
       "changed": "Selected freight, delivery-time, and inventory measures moved higher.",
       "matters": "Persistent pressure can reach stores and manufacturers through delays or higher costs.",
-      "confidence": "Moderate \u2014 movement is measurable but not yet broad-based.",
+      "confidence": "Moderate — movement is measurable but not yet broad-based.",
       "sources": [
         "Freight",
         "Ports",
@@ -40,24 +41,34 @@
       ],
       "status": "seed",
       "lastObserved": null,
-      "sourceDetails": []
+      "sourceDetails": [],
+      "level": "Watch"
     },
     {
       "name": "Infrastructure",
-      "score": 43,
-      "delta": -1,
+      "score": 74,
+      "delta": 0,
       "summary": "Most monitored systems remain within normal operating ranges.",
       "changed": "Localized interruptions rose, while national-level reliability remained stable.",
       "matters": "Current changes appear manageable unless disruptions begin clustering across regions.",
-      "confidence": "High \u2014 the majority of monitored indicators remain aligned.",
+      "confidence": "High — the majority of monitored indicators remain aligned.",
       "sources": [
         "Power",
         "Transport",
         "Networks"
       ],
-      "status": "seed",
-      "lastObserved": null,
-      "sourceDetails": []
+      "status": "partial",
+      "lastObserved": "2026-07-22T03:48:50+00:00",
+      "sourceDetails": [
+        {
+          "id": "nws-alerts",
+          "name": "National Weather Service active alerts",
+          "url": "https://api.weather.gov/alerts/active",
+          "observed": "2026-07-22T03:48:50+00:00",
+          "detail": "Weather component: 563 active alerts; 148 severe or extreme."
+        }
+      ],
+      "level": "Elevated"
     },
     {
       "name": "Conflict",
@@ -66,7 +77,7 @@
       "summary": "International activity remains elevated and deserves continued attention.",
       "changed": "Operational tempo and diplomatic strain are above their recent baseline.",
       "matters": "Escalation can affect energy, transport, markets, and public confidence even without direct domestic impact.",
-      "confidence": "Moderate \u2014 activity is clear, but future direction is uncertain.",
+      "confidence": "Moderate — activity is clear, but future direction is uncertain.",
       "sources": [
         "Events",
         "Diplomacy",
@@ -74,7 +85,8 @@
       ],
       "status": "seed",
       "lastObserved": null,
-      "sourceDetails": []
+      "sourceDetails": [],
+      "level": "Watch"
     },
     {
       "name": "Energy",
@@ -83,7 +95,7 @@
       "summary": "Prices and supply conditions remain uneven but manageable.",
       "changed": "Short-term price volatility increased while physical supply stayed broadly available.",
       "matters": "Volatility matters most when it persists long enough to affect household and business costs.",
-      "confidence": "Moderate-high \u2014 pricing data is clear; downstream impact is less certain.",
+      "confidence": "Moderate-high — pricing data is clear; downstream impact is less certain.",
       "sources": [
         "Prices",
         "Supply",
@@ -91,24 +103,130 @@
       ],
       "status": "seed",
       "lastObserved": null,
-      "sourceDetails": []
+      "sourceDetails": [],
+      "level": "Watch"
     },
     {
       "name": "Public Safety",
-      "score": 46,
+      "score": 70,
       "delta": 0,
       "summary": "No broad national shift is currently visible.",
       "changed": "Some regional measures rose, but the national pattern remains mixed.",
       "matters": "Regional movement matters locally without necessarily indicating a wider trend.",
-      "confidence": "Moderate \u2014 reporting timing varies across jurisdictions.",
+      "confidence": "Moderate — reporting timing varies across jurisdictions.",
       "sources": [
         "Incidents",
         "Alerts",
         "Regional reports"
       ],
-      "status": "seed",
-      "lastObserved": null,
-      "sourceDetails": []
+      "status": "partial",
+      "lastObserved": "2026-07-22T03:48:50+00:00",
+      "sourceDetails": [
+        {
+          "id": "nws-alerts",
+          "name": "National Weather Service active alerts",
+          "url": "https://api.weather.gov/alerts/active",
+          "observed": "2026-07-22T03:48:50+00:00",
+          "detail": "Weather component: 563 active alerts; 148 severe or extreme."
+        }
+      ],
+      "level": "Elevated"
+    },
+    {
+      "name": "Weather",
+      "score": 100,
+      "delta": 50,
+      "summary": "National weather pressure is calculated from active official alerts.",
+      "changed": "There are 563 active actual alerts, including 148 severe or extreme alerts.",
+      "matters": "Widespread or severe weather can affect travel, utilities, emergency response, and household safety.",
+      "confidence": "Moderate-high — direct NWS feed; alert counts do not measure realized damage.",
+      "sources": [
+        "National Weather Service active alerts"
+      ],
+      "status": "live",
+      "lastObserved": "2026-07-22T03:48:50+00:00",
+      "sourceDetails": [
+        {
+          "id": "nws-alerts",
+          "name": "National Weather Service active alerts",
+          "url": "https://api.weather.gov/alerts/active",
+          "observed": "2026-07-22T03:48:50+00:00",
+          "detail": "563 active actual alerts; 148 severe or extreme."
+        }
+      ],
+      "level": "Severe"
+    },
+    {
+      "name": "Earthquakes",
+      "score": 68,
+      "delta": 18,
+      "summary": "Seismic pressure reflects significant earthquakes reported during the past week.",
+      "changed": "USGS reports 3 significant earthquakes; the largest magnitude is 7.3.",
+      "matters": "Significant earthquakes can create localized life-safety, infrastructure, and supply-chain consequences.",
+      "confidence": "High — direct USGS event feed; the national score does not estimate local damage.",
+      "sources": [
+        "USGS significant earthquakes, past week"
+      ],
+      "status": "live",
+      "lastObserved": "2026-07-22T03:49:05.000Z",
+      "sourceDetails": [
+        {
+          "id": "usgs-earthquakes",
+          "name": "USGS significant earthquakes, past week",
+          "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_week.geojson",
+          "observed": "2026-07-22T03:49:05.000Z",
+          "detail": "3 significant events; maximum magnitude 7.3."
+        }
+      ],
+      "level": "Watch"
+    },
+    {
+      "name": "Cybersecurity",
+      "score": 90,
+      "delta": 40,
+      "summary": "Cyber pressure reflects new vulnerabilities confirmed as exploited in the wild.",
+      "changed": "CISA added 9 known exploited vulnerabilities in seven days and 28 in 30 days.",
+      "matters": "Newly exploited vulnerabilities increase patching urgency for affected organizations, but do not mean every user is exposed.",
+      "confidence": "High for catalog additions — CISA is authoritative; the score is not a measure of all cyber incidents.",
+      "sources": [
+        "CISA Known Exploited Vulnerabilities Catalog"
+      ],
+      "status": "live",
+      "lastObserved": "2026-07-21T15:12:01.557Z",
+      "sourceDetails": [
+        {
+          "id": "cisa-kev",
+          "name": "CISA Known Exploited Vulnerabilities Catalog",
+          "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+          "observed": "2026-07-21T15:12:01.557Z",
+          "detail": "9 additions in seven days; 28 in 30 days; 0 marked known ransomware use."
+        }
+      ],
+      "level": "Severe"
+    },
+    {
+      "name": "Space Weather",
+      "score": 88,
+      "delta": 38,
+      "summary": "Space-weather pressure uses recent NOAA SWPC alert products.",
+      "changed": "NOAA SWPC issued 11 alert products during the past seven days.",
+      "matters": "Strong geomagnetic and solar activity can affect radio, navigation, satellites, and some power-grid operations.",
+      "confidence": "Moderate-high — official NOAA feed; product counts are a proxy for operational severity.",
+      "sources": [
+        "NOAA Space Weather Prediction Center alerts"
+      ],
+      "status": "live",
+      "lastObserved": "2026-07-21 17:09:41.817",
+      "sourceDetails": [
+        {
+          "id": "noaa-swpc-alerts",
+          "name": "NOAA Space Weather Prediction Center alerts",
+          "url": "https://services.swpc.noaa.gov/products/alerts.json",
+          "observed": "2026-07-21 17:09:41.817",
+          "detail": "11 products issued in seven days; 10 matched alert or warning language."
+        }
+      ],
+      "level": "Severe"
     }
   ],
   "changes": [
@@ -116,27 +234,107 @@
       "category": "CONFLICT",
       "title": "International activity remains above baseline",
       "detail": "The signal is elevated, but the evidence does not establish a clear next direction.",
-      "direction": "\u2191 4"
+      "direction": "↑ 4"
     },
     {
       "category": "SUPPLY",
       "title": "Freight pressure increased modestly",
       "detail": "The change is measurable and worth monitoring, though not yet severe.",
-      "direction": "\u2191 3"
+      "direction": "↑ 3"
     },
     {
       "category": "ENERGY",
       "title": "Short-term price volatility increased",
       "detail": "Physical availability remains broadly stable, limiting immediate practical impact.",
-      "direction": "\u2191 2"
+      "direction": "↑ 2"
     }
   ],
   "mode": "live",
   "generatedBy": "Signal 5 public-data engine",
-  "methodVersion": "1.0.0",
+  "methodVersion": "2.1.0",
   "limitations": [
     "Scores are risk indicators, not forecasts.",
     "Missing sources reduce confidence rather than being silently replaced.",
     "Some categories use public proxy indicators because no single authoritative measure exists."
-  ]
+  ],
+  "generatedAt": "2026-07-22T03:49:38.224Z",
+  "sourceHealth": {
+    "successful": 4,
+    "failed": 2,
+    "successfulSources": [
+      "NWS",
+      "USGS",
+      "NOAA SWPC",
+      "CISA KEV"
+    ],
+    "failures": [
+      "FRED: FRED_API_KEY not configured",
+      "GDELT: GDELT_CLOUD_API_KEY not configured"
+    ]
+  },
+  "intelligence": {
+    "generatedAt": "2026-07-22T03:49:38.224Z",
+    "method": "Structured deterministic synthesis v1",
+    "direction": "Higher pressure",
+    "title": "Weather is the leading measurable driver",
+    "summary": "Higher pressure. 4 evidence-backed drivers account for the most meaningful movement in this refresh. The strongest measured change is weather, which rose sharply.",
+    "drivers": [
+      {
+        "category": "Weather",
+        "change": 50,
+        "score": 100,
+        "weightedImpact": 45,
+        "explanation": "Weather rose sharply to 100/100. There are 563 active actual alerts, including 148 severe or extreme alerts.",
+        "sourceName": "National Weather Service active alerts",
+        "sourceUrl": "https://api.weather.gov/alerts/active",
+        "observed": "2026-07-22T03:48:50+00:00"
+      },
+      {
+        "category": "Cybersecurity",
+        "change": 40,
+        "score": 90,
+        "weightedImpact": 40,
+        "explanation": "Cybersecurity rose sharply to 90/100. CISA added 9 known exploited vulnerabilities in seven days and 28 in 30 days.",
+        "sourceName": "CISA Known Exploited Vulnerabilities Catalog",
+        "sourceUrl": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+        "observed": "2026-07-21T15:12:01.557Z"
+      },
+      {
+        "category": "Space Weather",
+        "change": 38,
+        "score": 88,
+        "weightedImpact": 34.2,
+        "explanation": "Space Weather rose sharply to 88/100. NOAA SWPC issued 11 alert products during the past seven days.",
+        "sourceName": "NOAA Space Weather Prediction Center alerts",
+        "sourceUrl": "https://services.swpc.noaa.gov/products/alerts.json",
+        "observed": "2026-07-21 17:09:41.817"
+      },
+      {
+        "category": "Earthquakes",
+        "change": 18,
+        "score": 68,
+        "weightedImpact": 18,
+        "explanation": "Earthquakes rose sharply to 68/100. USGS reports 3 significant earthquakes; the largest magnitude is 7.3.",
+        "sourceName": "USGS significant earthquakes, past week",
+        "sourceUrl": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_week.geojson",
+        "observed": "2026-07-22T03:49:05.000Z"
+      }
+    ],
+    "audit": {
+      "driverCount": 4,
+      "activeCategoryCount": 10,
+      "failedSourceGroups": 2
+    }
+  },
+  "analytics": {
+    "sevenDayChange": 0,
+    "thirtyDayChange": 0,
+    "volatility": 14,
+    "biggestMover": {
+      "name": "Economy",
+      "change": 0
+    },
+    "biggestImprovement": null,
+    "observationCount": 2
+  }
 }
