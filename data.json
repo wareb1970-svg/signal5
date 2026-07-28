@@ -1,5 +1,5 @@
 {
-  "updated": "July 27, 2026 at 3:57 PM EDT",
+  "updated": "July 27, 2026 at 11:39 PM EDT",
   "sourceGroups": 6,
   "overall": {
     "score": 82,
@@ -46,7 +46,7 @@
     },
     {
       "name": "Infrastructure",
-      "score": 94,
+      "score": 90,
       "delta": 0,
       "summary": "Most monitored systems remain within normal operating ranges.",
       "changed": "Localized interruptions rose, while national-level reliability remained stable.",
@@ -58,14 +58,14 @@
         "Networks"
       ],
       "status": "partial",
-      "lastObserved": "2026-07-27T19:56:35+00:00",
+      "lastObserved": "2026-07-28T03:36:25+00:00",
       "sourceDetails": [
         {
           "id": "nws-alerts",
           "name": "National Weather Service active alerts",
           "url": "https://api.weather.gov/alerts/active",
-          "observed": "2026-07-27T19:56:35+00:00",
-          "detail": "Weather component: 445 active alerts; 108 severe or extreme."
+          "observed": "2026-07-28T03:36:25+00:00",
+          "detail": "Weather component: 335 active alerts; 48 severe or extreme."
         }
       ],
       "level": "Severe"
@@ -108,7 +108,7 @@
     },
     {
       "name": "Public Safety",
-      "score": 93,
+      "score": 90,
       "delta": 0,
       "summary": "No broad national shift is currently visible.",
       "changed": "Some regional measures rose, but the national pattern remains mixed.",
@@ -120,70 +120,70 @@
         "Regional reports"
       ],
       "status": "partial",
-      "lastObserved": "2026-07-27T19:56:35+00:00",
+      "lastObserved": "2026-07-28T03:36:25+00:00",
       "sourceDetails": [
         {
           "id": "nws-alerts",
           "name": "National Weather Service active alerts",
           "url": "https://api.weather.gov/alerts/active",
-          "observed": "2026-07-27T19:56:35+00:00",
-          "detail": "Weather component: 445 active alerts; 108 severe or extreme."
+          "observed": "2026-07-28T03:36:25+00:00",
+          "detail": "Weather component: 335 active alerts; 48 severe or extreme."
         }
       ],
       "level": "Severe"
     },
     {
       "name": "Weather",
-      "score": 96,
-      "delta": 5,
+      "score": 87,
+      "delta": -9,
       "summary": "National weather pressure is calculated from active official alerts.",
-      "changed": "There are 445 active actual alerts, including 108 severe or extreme alerts.",
+      "changed": "There are 335 active actual alerts, including 48 severe or extreme alerts.",
       "matters": "Widespread or severe weather can affect travel, utilities, emergency response, and household safety.",
       "confidence": "Moderate-high — direct NWS feed; alert counts do not measure realized damage.",
       "sources": [
         "National Weather Service active alerts"
       ],
       "status": "live",
-      "lastObserved": "2026-07-27T19:56:35+00:00",
+      "lastObserved": "2026-07-28T03:36:25+00:00",
       "sourceDetails": [
         {
           "id": "nws-alerts",
           "name": "National Weather Service active alerts",
           "url": "https://api.weather.gov/alerts/active",
-          "observed": "2026-07-27T19:56:35+00:00",
-          "detail": "445 active actual alerts; 108 severe or extreme."
+          "observed": "2026-07-28T03:36:25+00:00",
+          "detail": "335 active actual alerts; 48 severe or extreme."
         }
       ],
       "level": "Severe"
     },
     {
       "name": "Earthquakes",
-      "score": 21,
-      "delta": 0,
+      "score": 39,
+      "delta": 18,
       "summary": "Seismic pressure reflects significant earthquakes reported during the past week.",
-      "changed": "USGS reports 1 significant earthquakes; the largest magnitude is 5.0.",
+      "changed": "USGS reports 2 significant earthquakes; the largest magnitude is 5.8.",
       "matters": "Significant earthquakes can create localized life-safety, infrastructure, and supply-chain consequences.",
       "confidence": "High — direct USGS event feed; the national score does not estimate local damage.",
       "sources": [
         "USGS significant earthquakes, past week"
       ],
       "status": "live",
-      "lastObserved": "2026-07-27T19:57:02.000Z",
+      "lastObserved": "2026-07-28T03:38:49.000Z",
       "sourceDetails": [
         {
           "id": "usgs-earthquakes",
           "name": "USGS significant earthquakes, past week",
           "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_week.geojson",
-          "observed": "2026-07-27T19:57:02.000Z",
-          "detail": "1 significant events; maximum magnitude 5.0."
+          "observed": "2026-07-28T03:38:49.000Z",
+          "detail": "2 significant events; maximum magnitude 5.8."
         }
       ],
-      "level": "Normal"
+      "level": "Monitor"
     },
     {
       "name": "Cybersecurity",
       "score": 85,
-      "delta": 10,
+      "delta": 0,
       "summary": "Cyber pressure reflects new vulnerabilities confirmed as exploited in the wild.",
       "changed": "CISA added 8 known exploited vulnerabilities in seven days and 26 in 30 days.",
       "matters": "Newly exploited vulnerabilities increase patching urgency for affected organizations, but do not mean every user is exposed.",
@@ -257,7 +257,7 @@
     "Missing sources reduce confidence rather than being silently replaced.",
     "Some categories use public proxy indicators because no single authoritative measure exists."
   ],
-  "generatedAt": "2026-07-27T19:57:09.097Z",
+  "generatedAt": "2026-07-28T03:39:18.845Z",
   "sourceHealth": {
     "successful": 4,
     "failed": 2,
@@ -273,31 +273,31 @@
     ]
   },
   "intelligence": {
-    "generatedAt": "2026-07-27T19:57:09.097Z",
+    "generatedAt": "2026-07-28T03:39:18.845Z",
     "method": "Structured deterministic synthesis v1",
-    "direction": "Higher pressure",
-    "title": "Cybersecurity is the leading measurable driver",
-    "summary": "Higher pressure. 2 evidence-backed drivers account for the most meaningful movement in this refresh. The strongest measured change is cybersecurity, which rose sharply.",
+    "direction": "Broadly stable",
+    "title": "Earthquakes is the leading measurable driver",
+    "summary": "Broadly stable. 2 evidence-backed drivers account for the most meaningful movement in this refresh. The strongest measured change is earthquakes, which rose sharply.",
     "drivers": [
       {
-        "category": "Cybersecurity",
-        "change": 10,
-        "score": 85,
-        "weightedImpact": 10,
-        "explanation": "Cybersecurity rose sharply to 85/100. CISA added 8 known exploited vulnerabilities in seven days and 26 in 30 days.",
-        "sourceName": "CISA Known Exploited Vulnerabilities Catalog",
-        "sourceUrl": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
-        "observed": "2026-07-27T19:00:15.8632Z"
+        "category": "Earthquakes",
+        "change": 18,
+        "score": 39,
+        "weightedImpact": 18,
+        "explanation": "Earthquakes rose sharply to 39/100. USGS reports 2 significant earthquakes; the largest magnitude is 5.8.",
+        "sourceName": "USGS significant earthquakes, past week",
+        "sourceUrl": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_week.geojson",
+        "observed": "2026-07-28T03:38:49.000Z"
       },
       {
         "category": "Weather",
-        "change": 5,
-        "score": 96,
-        "weightedImpact": 4.5,
-        "explanation": "Weather moved higher to 96/100. There are 445 active actual alerts, including 108 severe or extreme alerts.",
+        "change": -9,
+        "score": 87,
+        "weightedImpact": 8.1,
+        "explanation": "Weather moved lower to 87/100. There are 335 active actual alerts, including 48 severe or extreme alerts.",
         "sourceName": "National Weather Service active alerts",
         "sourceUrl": "https://api.weather.gov/alerts/active",
-        "observed": "2026-07-27T19:56:35+00:00"
+        "observed": "2026-07-28T03:36:25+00:00"
       }
     ],
     "audit": {
@@ -309,12 +309,12 @@
   "analytics": {
     "sevenDayChange": 0,
     "thirtyDayChange": 0,
-    "volatility": 7.1,
+    "volatility": 6.9,
     "biggestMover": {
       "name": "Economy",
       "change": 0
     },
     "biggestImprovement": null,
-    "observationCount": 25
+    "observationCount": 26
   }
 }
