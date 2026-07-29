@@ -1,8 +1,8 @@
 {
-  "updated": "July 28, 2026 at 3:54 PM EDT",
+  "updated": "July 28, 2026 at 11:43 PM EDT",
   "sourceGroups": 6,
   "overall": {
-    "score": 89,
+    "score": 85,
     "level": "Severe",
     "summary": "4 categories are live and 2 are partial. 2 source groups are unavailable.",
     "confidence": "Moderate"
@@ -58,14 +58,14 @@
         "Networks"
       ],
       "status": "partial",
-      "lastObserved": "2026-07-28T19:54:41+00:00",
+      "lastObserved": "2026-07-29T03:42:01+00:00",
       "sourceDetails": [
         {
           "id": "nws-alerts",
           "name": "National Weather Service active alerts",
           "url": "https://api.weather.gov/alerts/active",
-          "observed": "2026-07-28T19:54:41+00:00",
-          "detail": "Weather component: 415 active alerts; 135 severe or extreme."
+          "observed": "2026-07-29T03:42:01+00:00",
+          "detail": "Weather component: 319 active alerts; 103 severe or extreme."
         }
       ],
       "level": "Severe"
@@ -120,38 +120,38 @@
         "Regional reports"
       ],
       "status": "partial",
-      "lastObserved": "2026-07-28T19:54:41+00:00",
+      "lastObserved": "2026-07-29T03:42:01+00:00",
       "sourceDetails": [
         {
           "id": "nws-alerts",
           "name": "National Weather Service active alerts",
           "url": "https://api.weather.gov/alerts/active",
-          "observed": "2026-07-28T19:54:41+00:00",
-          "detail": "Weather component: 415 active alerts; 135 severe or extreme."
+          "observed": "2026-07-29T03:42:01+00:00",
+          "detail": "Weather component: 319 active alerts; 103 severe or extreme."
         }
       ],
       "level": "Severe"
     },
     {
       "name": "Weather",
-      "score": 97,
-      "delta": 10,
+      "score": 93,
+      "delta": -4,
       "summary": "National weather pressure is calculated from active official alerts.",
-      "changed": "There are 415 active actual alerts, including 135 severe or extreme alerts.",
+      "changed": "There are 319 active actual alerts, including 103 severe or extreme alerts.",
       "matters": "Widespread or severe weather can affect travel, utilities, emergency response, and household safety.",
       "confidence": "Moderate-high — direct NWS feed; alert counts do not measure realized damage.",
       "sources": [
         "National Weather Service active alerts"
       ],
       "status": "live",
-      "lastObserved": "2026-07-28T19:54:41+00:00",
+      "lastObserved": "2026-07-29T03:42:01+00:00",
       "sourceDetails": [
         {
           "id": "nws-alerts",
           "name": "National Weather Service active alerts",
           "url": "https://api.weather.gov/alerts/active",
-          "observed": "2026-07-28T19:54:41+00:00",
-          "detail": "415 active actual alerts; 135 severe or extreme."
+          "observed": "2026-07-29T03:42:01+00:00",
+          "detail": "319 active actual alerts; 103 severe or extreme."
         }
       ],
       "level": "Severe"
@@ -168,13 +168,13 @@
         "USGS significant earthquakes, past week"
       ],
       "status": "live",
-      "lastObserved": "2026-07-28T19:54:08.000Z",
+      "lastObserved": "2026-07-29T03:43:02.000Z",
       "sourceDetails": [
         {
           "id": "usgs-earthquakes",
           "name": "USGS significant earthquakes, past week",
           "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_week.geojson",
-          "observed": "2026-07-28T19:54:08.000Z",
+          "observed": "2026-07-29T03:43:02.000Z",
           "detail": "4 significant events; maximum magnitude 6.8."
         }
       ],
@@ -182,10 +182,10 @@
     },
     {
       "name": "Cybersecurity",
-      "score": 85,
-      "delta": 0,
+      "score": 65,
+      "delta": -20,
       "summary": "Cyber pressure reflects new vulnerabilities confirmed as exploited in the wild.",
-      "changed": "CISA added 8 known exploited vulnerabilities in seven days and 26 in 30 days.",
+      "changed": "CISA added 4 known exploited vulnerabilities in seven days and 26 in 30 days.",
       "matters": "Newly exploited vulnerabilities increase patching urgency for affected organizations, but do not mean every user is exposed.",
       "confidence": "High for catalog additions — CISA is authoritative; the score is not a measure of all cyber incidents.",
       "sources": [
@@ -199,10 +199,10 @@
           "name": "CISA Known Exploited Vulnerabilities Catalog",
           "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
           "observed": "2026-07-27T19:00:15.8632Z",
-          "detail": "8 additions in seven days; 26 in 30 days; 0 marked known ransomware use."
+          "detail": "4 additions in seven days; 26 in 30 days; 0 marked known ransomware use."
         }
       ],
-      "level": "Severe"
+      "level": "Watch"
     },
     {
       "name": "Space Weather",
@@ -257,7 +257,7 @@
     "Missing sources reduce confidence rather than being silently replaced.",
     "Some categories use public proxy indicators because no single authoritative measure exists."
   ],
-  "generatedAt": "2026-07-28T19:54:45.077Z",
+  "generatedAt": "2026-07-29T03:43:12.488Z",
   "sourceHealth": {
     "successful": 4,
     "failed": 2,
@@ -273,38 +273,48 @@
     ]
   },
   "intelligence": {
-    "generatedAt": "2026-07-28T19:54:45.077Z",
+    "generatedAt": "2026-07-29T03:43:12.488Z",
     "method": "Structured deterministic synthesis v1",
     "direction": "Broadly stable",
-    "title": "Weather is the leading measurable driver",
-    "summary": "Broadly stable. 1 evidence-backed driver account for the most meaningful movement in this refresh. The strongest measured change is weather, which rose sharply.",
+    "title": "Cybersecurity is the leading measurable driver",
+    "summary": "Broadly stable. 2 evidence-backed drivers account for the most meaningful movement in this refresh. The strongest measured change is cybersecurity, which fell sharply.",
     "drivers": [
       {
+        "category": "Cybersecurity",
+        "change": -20,
+        "score": 65,
+        "weightedImpact": 20,
+        "explanation": "Cybersecurity fell sharply to 65/100. CISA added 4 known exploited vulnerabilities in seven days and 26 in 30 days.",
+        "sourceName": "CISA Known Exploited Vulnerabilities Catalog",
+        "sourceUrl": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+        "observed": "2026-07-27T19:00:15.8632Z"
+      },
+      {
         "category": "Weather",
-        "change": 10,
-        "score": 97,
-        "weightedImpact": 9,
-        "explanation": "Weather rose sharply to 97/100. There are 415 active actual alerts, including 135 severe or extreme alerts.",
+        "change": -4,
+        "score": 93,
+        "weightedImpact": 3.6,
+        "explanation": "Weather edged lower to 93/100. There are 319 active actual alerts, including 103 severe or extreme alerts.",
         "sourceName": "National Weather Service active alerts",
         "sourceUrl": "https://api.weather.gov/alerts/active",
-        "observed": "2026-07-28T19:54:41+00:00"
+        "observed": "2026-07-29T03:42:01+00:00"
       }
     ],
     "audit": {
-      "driverCount": 1,
+      "driverCount": 2,
       "activeCategoryCount": 10,
       "failedSourceGroups": 2
     }
   },
   "analytics": {
-    "sevenDayChange": 35,
+    "sevenDayChange": 31,
     "thirtyDayChange": 0,
-    "volatility": 6.7,
+    "volatility": 6.6,
     "biggestMover": {
       "name": "Infrastructure",
       "change": 50
     },
     "biggestImprovement": null,
-    "observationCount": 29
+    "observationCount": 30
   }
 }
