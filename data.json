@@ -1,5 +1,5 @@
 {
-  "updated": "August 6, 2026 at 5:08 AM EDT",
+  "updated": "August 6, 2026 at 10:36 AM EDT",
   "sourceGroups": 6,
   "overall": {
     "score": 80,
@@ -58,14 +58,14 @@
         "Networks"
       ],
       "status": "partial",
-      "lastObserved": "2026-08-06T09:07:36+00:00",
+      "lastObserved": "2026-08-06T14:36:22+00:00",
       "sourceDetails": [
         {
           "id": "nws-alerts",
           "name": "National Weather Service active alerts",
           "url": "https://api.weather.gov/alerts/active",
-          "observed": "2026-08-06T09:07:36+00:00",
-          "detail": "Weather component: 178 active alerts; 50 severe or extreme."
+          "observed": "2026-08-06T14:36:22+00:00",
+          "detail": "Weather component: 176 active alerts; 51 severe or extreme."
         }
       ],
       "level": "Elevated"
@@ -120,14 +120,14 @@
         "Regional reports"
       ],
       "status": "partial",
-      "lastObserved": "2026-08-06T09:07:36+00:00",
+      "lastObserved": "2026-08-06T14:36:22+00:00",
       "sourceDetails": [
         {
           "id": "nws-alerts",
           "name": "National Weather Service active alerts",
           "url": "https://api.weather.gov/alerts/active",
-          "observed": "2026-08-06T09:07:36+00:00",
-          "detail": "Weather component: 178 active alerts; 50 severe or extreme."
+          "observed": "2026-08-06T14:36:22+00:00",
+          "detail": "Weather component: 176 active alerts; 51 severe or extreme."
         }
       ],
       "level": "Elevated"
@@ -135,23 +135,23 @@
     {
       "name": "Weather",
       "score": 84,
-      "delta": -1,
+      "delta": 0,
       "summary": "National weather pressure is calculated from active official alerts.",
-      "changed": "There are 178 active actual alerts, including 50 severe or extreme alerts.",
+      "changed": "There are 176 active actual alerts, including 51 severe or extreme alerts.",
       "matters": "Widespread or severe weather can affect travel, utilities, emergency response, and household safety.",
       "confidence": "Moderate-high — direct NWS feed; alert counts do not measure realized damage.",
       "sources": [
         "National Weather Service active alerts"
       ],
       "status": "live",
-      "lastObserved": "2026-08-06T09:07:36+00:00",
+      "lastObserved": "2026-08-06T14:36:22+00:00",
       "sourceDetails": [
         {
           "id": "nws-alerts",
           "name": "National Weather Service active alerts",
           "url": "https://api.weather.gov/alerts/active",
-          "observed": "2026-08-06T09:07:36+00:00",
-          "detail": "178 active actual alerts; 50 severe or extreme."
+          "observed": "2026-08-06T14:36:22+00:00",
+          "detail": "176 active actual alerts; 51 severe or extreme."
         }
       ],
       "level": "Elevated"
@@ -168,13 +168,13 @@
         "USGS significant earthquakes, past week"
       ],
       "status": "live",
-      "lastObserved": "2026-08-06T09:08:03.000Z",
+      "lastObserved": "2026-08-06T14:35:47.000Z",
       "sourceDetails": [
         {
           "id": "usgs-earthquakes",
           "name": "USGS significant earthquakes, past week",
           "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_week.geojson",
-          "observed": "2026-08-06T09:08:03.000Z",
+          "observed": "2026-08-06T14:35:47.000Z",
           "detail": "2 significant events; maximum magnitude 6.3."
         }
       ],
@@ -192,13 +192,13 @@
         "CISA Known Exploited Vulnerabilities Catalog"
       ],
       "status": "live",
-      "lastObserved": "2026-08-05T16:50:38.6458Z",
+      "lastObserved": "2026-08-06T12:26:27.015Z",
       "sourceDetails": [
         {
           "id": "cisa-kev",
           "name": "CISA Known Exploited Vulnerabilities Catalog",
           "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
-          "observed": "2026-08-05T16:50:38.6458Z",
+          "observed": "2026-08-06T12:26:27.015Z",
           "detail": "5 additions in seven days; 30 in 30 days; 2 marked known ransomware use."
         }
       ],
@@ -257,7 +257,7 @@
     "Missing sources reduce confidence rather than being silently replaced.",
     "Some categories use public proxy indicators because no single authoritative measure exists."
   ],
-  "generatedAt": "2026-08-06T09:08:08.623Z",
+  "generatedAt": "2026-08-06T14:36:42.526Z",
   "sourceHealth": {
     "successful": 4,
     "failed": 2,
@@ -273,7 +273,7 @@
     ]
   },
   "intelligence": {
-    "generatedAt": "2026-08-06T09:08:08.623Z",
+    "generatedAt": "2026-08-06T14:36:42.526Z",
     "method": "Structured deterministic synthesis v1",
     "direction": "Broadly stable",
     "title": "No single category is driving the dashboard",
@@ -286,7 +286,7 @@
     }
   },
   "analytics": {
-    "sevenDayChange": 0,
+    "sevenDayChange": 1,
     "thirtyDayChange": 0,
     "volatility": 5.3,
     "biggestMover": {
@@ -295,8 +295,8 @@
     },
     "biggestImprovement": {
       "name": "Earthquakes",
-      "change": -19
+      "change": -13
     },
-    "observationCount": 63
+    "observationCount": 64
   }
 }
