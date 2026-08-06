@@ -1,8 +1,8 @@
 {
-  "updated": "August 5, 2026 at 3:57 PM EDT",
+  "updated": "August 5, 2026 at 11:41 PM EDT",
   "sourceGroups": 6,
   "overall": {
-    "score": 81,
+    "score": 80,
     "level": "Elevated",
     "summary": "4 categories are live and 2 are partial. 2 source groups are unavailable.",
     "confidence": "Moderate"
@@ -46,7 +46,7 @@
     },
     {
       "name": "Infrastructure",
-      "score": 83,
+      "score": 84,
       "delta": 0,
       "summary": "Most monitored systems remain within normal operating ranges.",
       "changed": "Localized interruptions rose, while national-level reliability remained stable.",
@@ -58,14 +58,14 @@
         "Networks"
       ],
       "status": "partial",
-      "lastObserved": "2026-08-05T19:57:06+00:00",
+      "lastObserved": "2026-08-06T03:41:53+00:00",
       "sourceDetails": [
         {
           "id": "nws-alerts",
           "name": "National Weather Service active alerts",
           "url": "https://api.weather.gov/alerts/active",
-          "observed": "2026-08-05T19:57:06+00:00",
-          "detail": "Weather component: 187 active alerts; 56 severe or extreme."
+          "observed": "2026-08-06T03:41:53+00:00",
+          "detail": "Weather component: 161 active alerts; 63 severe or extreme."
         }
       ],
       "level": "Elevated"
@@ -108,7 +108,7 @@
     },
     {
       "name": "Public Safety",
-      "score": 83,
+      "score": 84,
       "delta": 0,
       "summary": "No broad national shift is currently visible.",
       "changed": "Some regional measures rose, but the national pattern remains mixed.",
@@ -120,14 +120,14 @@
         "Regional reports"
       ],
       "status": "partial",
-      "lastObserved": "2026-08-05T19:57:06+00:00",
+      "lastObserved": "2026-08-06T03:41:53+00:00",
       "sourceDetails": [
         {
           "id": "nws-alerts",
           "name": "National Weather Service active alerts",
           "url": "https://api.weather.gov/alerts/active",
-          "observed": "2026-08-05T19:57:06+00:00",
-          "detail": "Weather component: 187 active alerts; 56 severe or extreme."
+          "observed": "2026-08-06T03:41:53+00:00",
+          "detail": "Weather component: 161 active alerts; 63 severe or extreme."
         }
       ],
       "level": "Elevated"
@@ -135,23 +135,23 @@
     {
       "name": "Weather",
       "score": 85,
-      "delta": 6,
+      "delta": 0,
       "summary": "National weather pressure is calculated from active official alerts.",
-      "changed": "There are 187 active actual alerts, including 56 severe or extreme alerts.",
+      "changed": "There are 161 active actual alerts, including 63 severe or extreme alerts.",
       "matters": "Widespread or severe weather can affect travel, utilities, emergency response, and household safety.",
       "confidence": "Moderate-high — direct NWS feed; alert counts do not measure realized damage.",
       "sources": [
         "National Weather Service active alerts"
       ],
       "status": "live",
-      "lastObserved": "2026-08-05T19:57:06+00:00",
+      "lastObserved": "2026-08-06T03:41:53+00:00",
       "sourceDetails": [
         {
           "id": "nws-alerts",
           "name": "National Weather Service active alerts",
           "url": "https://api.weather.gov/alerts/active",
-          "observed": "2026-08-05T19:57:06+00:00",
-          "detail": "187 active actual alerts; 56 severe or extreme."
+          "observed": "2026-08-06T03:41:53+00:00",
+          "detail": "161 active actual alerts; 63 severe or extreme."
         }
       ],
       "level": "Severe"
@@ -168,13 +168,13 @@
         "USGS significant earthquakes, past week"
       ],
       "status": "live",
-      "lastObserved": "2026-08-05T19:57:02.000Z",
+      "lastObserved": "2026-08-06T03:41:16.000Z",
       "sourceDetails": [
         {
           "id": "usgs-earthquakes",
           "name": "USGS significant earthquakes, past week",
           "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_week.geojson",
-          "observed": "2026-08-05T19:57:02.000Z",
+          "observed": "2026-08-06T03:41:16.000Z",
           "detail": "2 significant events; maximum magnitude 6.3."
         }
       ],
@@ -182,10 +182,10 @@
     },
     {
       "name": "Cybersecurity",
-      "score": 85,
-      "delta": 5,
+      "score": 80,
+      "delta": -5,
       "summary": "Cyber pressure reflects new vulnerabilities confirmed as exploited in the wild.",
-      "changed": "CISA added 6 known exploited vulnerabilities in seven days and 30 in 30 days.",
+      "changed": "CISA added 5 known exploited vulnerabilities in seven days and 30 in 30 days.",
       "matters": "Newly exploited vulnerabilities increase patching urgency for affected organizations, but do not mean every user is exposed.",
       "confidence": "High for catalog additions — CISA is authoritative; the score is not a measure of all cyber incidents.",
       "sources": [
@@ -199,10 +199,10 @@
           "name": "CISA Known Exploited Vulnerabilities Catalog",
           "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
           "observed": "2026-08-05T16:50:38.6458Z",
-          "detail": "6 additions in seven days; 30 in 30 days; 2 marked known ransomware use."
+          "detail": "5 additions in seven days; 30 in 30 days; 2 marked known ransomware use."
         }
       ],
-      "level": "Severe"
+      "level": "Elevated"
     },
     {
       "name": "Space Weather",
@@ -257,7 +257,7 @@
     "Missing sources reduce confidence rather than being silently replaced.",
     "Some categories use public proxy indicators because no single authoritative measure exists."
   ],
-  "generatedAt": "2026-08-05T19:57:08.084Z",
+  "generatedAt": "2026-08-06T03:41:59.094Z",
   "sourceHealth": {
     "successful": 4,
     "failed": 2,
@@ -273,51 +273,41 @@
     ]
   },
   "intelligence": {
-    "generatedAt": "2026-08-05T19:57:08.084Z",
+    "generatedAt": "2026-08-06T03:41:59.094Z",
     "method": "Structured deterministic synthesis v1",
-    "direction": "Higher pressure",
-    "title": "Weather is the leading measurable driver",
-    "summary": "Higher pressure. 2 evidence-backed drivers account for the most meaningful movement in this refresh. The strongest measured change is weather, which moved higher.",
+    "direction": "Broadly stable",
+    "title": "Cybersecurity is the leading measurable driver",
+    "summary": "Broadly stable. 1 evidence-backed driver account for the most meaningful movement in this refresh. The strongest measured change is cybersecurity, which moved lower.",
     "drivers": [
       {
-        "category": "Weather",
-        "change": 6,
-        "score": 85,
-        "weightedImpact": 5.4,
-        "explanation": "Weather moved higher to 85/100. There are 187 active actual alerts, including 56 severe or extreme alerts.",
-        "sourceName": "National Weather Service active alerts",
-        "sourceUrl": "https://api.weather.gov/alerts/active",
-        "observed": "2026-08-05T19:57:06+00:00"
-      },
-      {
         "category": "Cybersecurity",
-        "change": 5,
-        "score": 85,
+        "change": -5,
+        "score": 80,
         "weightedImpact": 5,
-        "explanation": "Cybersecurity moved higher to 85/100. CISA added 6 known exploited vulnerabilities in seven days and 30 in 30 days.",
+        "explanation": "Cybersecurity moved lower to 80/100. CISA added 5 known exploited vulnerabilities in seven days and 30 in 30 days.",
         "sourceName": "CISA Known Exploited Vulnerabilities Catalog",
         "sourceUrl": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
         "observed": "2026-08-05T16:50:38.6458Z"
       }
     ],
     "audit": {
-      "driverCount": 2,
+      "driverCount": 1,
       "activeCategoryCount": 10,
       "failedSourceGroups": 2
     }
   },
   "analytics": {
-    "sevenDayChange": -3,
+    "sevenDayChange": -1,
     "thirtyDayChange": 0,
     "volatility": 5.4,
     "biggestMover": {
-      "name": "Earthquakes",
-      "change": -19
+      "name": "Cybersecurity",
+      "change": 20
     },
     "biggestImprovement": {
       "name": "Earthquakes",
       "change": -19
     },
-    "observationCount": 61
+    "observationCount": 62
   }
 }
