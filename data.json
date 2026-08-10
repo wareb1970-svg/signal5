@@ -1,8 +1,8 @@
 {
-  "updated": "August 9, 2026 at 3:02 PM EDT",
+  "updated": "August 9, 2026 at 10:36 PM EDT",
   "sourceGroups": 6,
   "overall": {
-    "score": 81,
+    "score": 82,
     "level": "Elevated",
     "summary": "4 categories are live and 2 are partial. 2 source groups are unavailable.",
     "confidence": "Moderate"
@@ -46,7 +46,7 @@
     },
     {
       "name": "Infrastructure",
-      "score": 82,
+      "score": 84,
       "delta": 0,
       "summary": "Most monitored systems remain within normal operating ranges.",
       "changed": "Localized interruptions rose, while national-level reliability remained stable.",
@@ -58,14 +58,14 @@
         "Networks"
       ],
       "status": "partial",
-      "lastObserved": "2026-08-09T19:00:00+00:00",
+      "lastObserved": "2026-08-10T02:35:58+00:00",
       "sourceDetails": [
         {
           "id": "nws-alerts",
           "name": "National Weather Service active alerts",
           "url": "https://api.weather.gov/alerts/active",
-          "observed": "2026-08-09T19:00:00+00:00",
-          "detail": "Weather component: 180 active alerts; 45 severe or extreme."
+          "observed": "2026-08-10T02:35:58+00:00",
+          "detail": "Weather component: 183 active alerts; 59 severe or extreme."
         }
       ],
       "level": "Elevated"
@@ -108,7 +108,7 @@
     },
     {
       "name": "Public Safety",
-      "score": 82,
+      "score": 83,
       "delta": 0,
       "summary": "No broad national shift is currently visible.",
       "changed": "Some regional measures rose, but the national pattern remains mixed.",
@@ -120,41 +120,41 @@
         "Regional reports"
       ],
       "status": "partial",
-      "lastObserved": "2026-08-09T19:00:00+00:00",
+      "lastObserved": "2026-08-10T02:35:58+00:00",
       "sourceDetails": [
         {
           "id": "nws-alerts",
           "name": "National Weather Service active alerts",
           "url": "https://api.weather.gov/alerts/active",
-          "observed": "2026-08-09T19:00:00+00:00",
-          "detail": "Weather component: 180 active alerts; 45 severe or extreme."
+          "observed": "2026-08-10T02:35:58+00:00",
+          "detail": "Weather component: 183 active alerts; 59 severe or extreme."
         }
       ],
       "level": "Elevated"
     },
     {
       "name": "Weather",
-      "score": 83,
-      "delta": 3,
+      "score": 85,
+      "delta": 2,
       "summary": "National weather pressure is calculated from active official alerts.",
-      "changed": "There are 180 active actual alerts, including 45 severe or extreme alerts.",
+      "changed": "There are 183 active actual alerts, including 59 severe or extreme alerts.",
       "matters": "Widespread or severe weather can affect travel, utilities, emergency response, and household safety.",
       "confidence": "Moderate-high — direct NWS feed; alert counts do not measure realized damage.",
       "sources": [
         "National Weather Service active alerts"
       ],
       "status": "live",
-      "lastObserved": "2026-08-09T19:00:00+00:00",
+      "lastObserved": "2026-08-10T02:35:58+00:00",
       "sourceDetails": [
         {
           "id": "nws-alerts",
           "name": "National Weather Service active alerts",
           "url": "https://api.weather.gov/alerts/active",
-          "observed": "2026-08-09T19:00:00+00:00",
-          "detail": "180 active actual alerts; 45 severe or extreme."
+          "observed": "2026-08-10T02:35:58+00:00",
+          "detail": "183 active actual alerts; 59 severe or extreme."
         }
       ],
-      "level": "Elevated"
+      "level": "Severe"
     },
     {
       "name": "Earthquakes",
@@ -168,13 +168,13 @@
         "USGS significant earthquakes, past week"
       ],
       "status": "live",
-      "lastObserved": "2026-08-09T19:02:19.000Z",
+      "lastObserved": "2026-08-10T02:35:08.000Z",
       "sourceDetails": [
         {
           "id": "usgs-earthquakes",
           "name": "USGS significant earthquakes, past week",
           "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_week.geojson",
-          "observed": "2026-08-09T19:02:19.000Z",
+          "observed": "2026-08-10T02:35:08.000Z",
           "detail": "3 significant events; maximum magnitude 6.3."
         }
       ],
@@ -185,7 +185,7 @@
       "score": 85,
       "delta": 0,
       "summary": "Cyber pressure reflects new vulnerabilities confirmed as exploited in the wild.",
-      "changed": "CISA added 6 known exploited vulnerabilities in seven days and 27 in 30 days.",
+      "changed": "CISA added 6 known exploited vulnerabilities in seven days and 25 in 30 days.",
       "matters": "Newly exploited vulnerabilities increase patching urgency for affected organizations, but do not mean every user is exposed.",
       "confidence": "High for catalog additions — CISA is authoritative; the score is not a measure of all cyber incidents.",
       "sources": [
@@ -199,7 +199,7 @@
           "name": "CISA Known Exploited Vulnerabilities Catalog",
           "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
           "observed": "2026-08-07T16:45:47.0648Z",
-          "detail": "6 additions in seven days; 27 in 30 days; 2 marked known ransomware use."
+          "detail": "6 additions in seven days; 25 in 30 days; 2 marked known ransomware use."
         }
       ],
       "level": "Severe"
@@ -257,7 +257,7 @@
     "Missing sources reduce confidence rather than being silently replaced.",
     "Some categories use public proxy indicators because no single authoritative measure exists."
   ],
-  "generatedAt": "2026-08-09T19:02:48.250Z",
+  "generatedAt": "2026-08-10T02:36:06.615Z",
   "sourceHealth": {
     "successful": 4,
     "failed": 2,
@@ -273,7 +273,7 @@
     ]
   },
   "intelligence": {
-    "generatedAt": "2026-08-09T19:02:48.250Z",
+    "generatedAt": "2026-08-10T02:36:06.615Z",
     "method": "Structured deterministic synthesis v1",
     "direction": "Broadly stable",
     "title": "Weather is the leading measurable driver",
@@ -281,13 +281,13 @@
     "drivers": [
       {
         "category": "Weather",
-        "change": 3,
-        "score": 83,
-        "weightedImpact": 2.7,
-        "explanation": "Weather edged higher to 83/100. There are 180 active actual alerts, including 45 severe or extreme alerts.",
+        "change": 2,
+        "score": 85,
+        "weightedImpact": 1.8,
+        "explanation": "Weather edged higher to 85/100. There are 183 active actual alerts, including 59 severe or extreme alerts.",
         "sourceName": "National Weather Service active alerts",
         "sourceUrl": "https://api.weather.gov/alerts/active",
-        "observed": "2026-08-09T19:00:00+00:00"
+        "observed": "2026-08-10T02:35:58+00:00"
       }
     ],
     "audit": {
@@ -306,8 +306,8 @@
     },
     "biggestImprovement": {
       "name": "Infrastructure",
-      "change": -11
+      "change": -10
     },
-    "observationCount": 77
+    "observationCount": 78
   }
 }
