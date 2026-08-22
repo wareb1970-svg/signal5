@@ -1,9 +1,9 @@
 {
-  "updated": "August 22, 2026 at 9:02 AM EDT",
+  "updated": "August 22, 2026 at 2:50 PM EDT",
   "sourceGroups": 6,
   "overall": {
-    "score": 83,
-    "level": "Elevated",
+    "score": 86,
+    "level": "Severe",
     "summary": "4 categories are live and 2 are partial. 2 source groups are unavailable.",
     "confidence": "Moderate"
   },
@@ -46,7 +46,7 @@
     },
     {
       "name": "Infrastructure",
-      "score": 88,
+      "score": 90,
       "delta": 0,
       "summary": "Most monitored systems remain within normal operating ranges.",
       "changed": "Localized interruptions rose, while national-level reliability remained stable.",
@@ -58,14 +58,14 @@
         "Networks"
       ],
       "status": "partial",
-      "lastObserved": "2026-08-22T13:00:08+00:00",
+      "lastObserved": "2026-08-22T18:49:55+00:00",
       "sourceDetails": [
         {
           "id": "nws-alerts",
           "name": "National Weather Service active alerts",
           "url": "https://api.weather.gov/alerts/active",
-          "observed": "2026-08-22T13:00:08+00:00",
-          "detail": "Weather component: 253 active alerts; 51 severe or extreme."
+          "observed": "2026-08-22T18:49:55+00:00",
+          "detail": "Weather component: 314 active alerts; 75 severe or extreme."
         }
       ],
       "level": "Severe"
@@ -108,7 +108,7 @@
     },
     {
       "name": "Public Safety",
-      "score": 88,
+      "score": 89,
       "delta": 0,
       "summary": "No broad national shift is currently visible.",
       "changed": "Some regional measures rose, but the national pattern remains mixed.",
@@ -120,65 +120,65 @@
         "Regional reports"
       ],
       "status": "partial",
-      "lastObserved": "2026-08-22T13:00:08+00:00",
+      "lastObserved": "2026-08-22T18:49:55+00:00",
       "sourceDetails": [
         {
           "id": "nws-alerts",
           "name": "National Weather Service active alerts",
           "url": "https://api.weather.gov/alerts/active",
-          "observed": "2026-08-22T13:00:08+00:00",
-          "detail": "Weather component: 253 active alerts; 51 severe or extreme."
+          "observed": "2026-08-22T18:49:55+00:00",
+          "detail": "Weather component: 314 active alerts; 75 severe or extreme."
         }
       ],
       "level": "Severe"
     },
     {
       "name": "Weather",
-      "score": 86,
-      "delta": -1,
+      "score": 91,
+      "delta": 5,
       "summary": "National weather pressure is calculated from active official alerts.",
-      "changed": "There are 253 active actual alerts, including 51 severe or extreme alerts.",
+      "changed": "There are 314 active actual alerts, including 75 severe or extreme alerts.",
       "matters": "Widespread or severe weather can affect travel, utilities, emergency response, and household safety.",
       "confidence": "Moderate-high — direct NWS feed; alert counts do not measure realized damage.",
       "sources": [
         "National Weather Service active alerts"
       ],
       "status": "live",
-      "lastObserved": "2026-08-22T13:00:08+00:00",
+      "lastObserved": "2026-08-22T18:49:55+00:00",
       "sourceDetails": [
         {
           "id": "nws-alerts",
           "name": "National Weather Service active alerts",
           "url": "https://api.weather.gov/alerts/active",
-          "observed": "2026-08-22T13:00:08+00:00",
-          "detail": "253 active actual alerts; 51 severe or extreme."
+          "observed": "2026-08-22T18:49:55+00:00",
+          "detail": "314 active actual alerts; 75 severe or extreme."
         }
       ],
       "level": "Severe"
     },
     {
       "name": "Earthquakes",
-      "score": 47,
-      "delta": -9,
+      "score": 53,
+      "delta": 6,
       "summary": "Seismic pressure reflects significant earthquakes reported during the past week.",
-      "changed": "USGS reports 1 significant earthquakes; the largest magnitude is 6.7.",
+      "changed": "USGS reports 2 significant earthquakes; the largest magnitude is 6.7.",
       "matters": "Significant earthquakes can create localized life-safety, infrastructure, and supply-chain consequences.",
       "confidence": "High — direct USGS event feed; the national score does not estimate local damage.",
       "sources": [
         "USGS significant earthquakes, past week"
       ],
       "status": "live",
-      "lastObserved": "2026-08-22T13:01:28.000Z",
+      "lastObserved": "2026-08-22T18:50:22.000Z",
       "sourceDetails": [
         {
           "id": "usgs-earthquakes",
           "name": "USGS significant earthquakes, past week",
           "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_week.geojson",
-          "observed": "2026-08-22T13:01:28.000Z",
-          "detail": "1 significant events; maximum magnitude 6.7."
+          "observed": "2026-08-22T18:50:22.000Z",
+          "detail": "2 significant events; maximum magnitude 6.7."
         }
       ],
-      "level": "Monitor"
+      "level": "Watch"
     },
     {
       "name": "Cybersecurity",
@@ -257,7 +257,7 @@
     "Missing sources reduce confidence rather than being silently replaced.",
     "Some categories use public proxy indicators because no single authoritative measure exists."
   ],
-  "generatedAt": "2026-08-22T13:02:20.282Z",
+  "generatedAt": "2026-08-22T18:50:21.718Z",
   "sourceHealth": {
     "successful": 4,
     "failed": 2,
@@ -273,33 +273,43 @@
     ]
   },
   "intelligence": {
-    "generatedAt": "2026-08-22T13:02:20.282Z",
+    "generatedAt": "2026-08-22T18:50:21.718Z",
     "method": "Structured deterministic synthesis v1",
-    "direction": "Broadly stable",
+    "direction": "Higher pressure",
     "title": "Earthquakes is the leading measurable driver",
-    "summary": "Broadly stable. 1 evidence-backed driver account for the most meaningful movement in this refresh. The strongest measured change is earthquakes, which moved lower.",
+    "summary": "Higher pressure. 2 evidence-backed drivers account for the most meaningful movement in this refresh. The strongest measured change is earthquakes, which moved higher.",
     "drivers": [
       {
         "category": "Earthquakes",
-        "change": -9,
-        "score": 47,
-        "weightedImpact": 9,
-        "explanation": "Earthquakes moved lower to 47/100. USGS reports 1 significant earthquakes; the largest magnitude is 6.7.",
+        "change": 6,
+        "score": 53,
+        "weightedImpact": 6,
+        "explanation": "Earthquakes moved higher to 53/100. USGS reports 2 significant earthquakes; the largest magnitude is 6.7.",
         "sourceName": "USGS significant earthquakes, past week",
         "sourceUrl": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_week.geojson",
-        "observed": "2026-08-22T13:01:28.000Z"
+        "observed": "2026-08-22T18:50:22.000Z"
+      },
+      {
+        "category": "Weather",
+        "change": 5,
+        "score": 91,
+        "weightedImpact": 4.5,
+        "explanation": "Weather moved higher to 91/100. There are 314 active actual alerts, including 75 severe or extreme alerts.",
+        "sourceName": "National Weather Service active alerts",
+        "sourceUrl": "https://api.weather.gov/alerts/active",
+        "observed": "2026-08-22T18:49:55+00:00"
       }
     ],
     "audit": {
-      "driverCount": 1,
+      "driverCount": 2,
       "activeCategoryCount": 10,
       "failedSourceGroups": 2
     }
   },
   "analytics": {
-    "sevenDayChange": -6,
-    "thirtyDayChange": -5,
-    "volatility": 3.9,
+    "sevenDayChange": -2,
+    "thirtyDayChange": -2,
+    "volatility": 3.8,
     "biggestMover": {
       "name": "Earthquakes",
       "change": -33
@@ -308,6 +318,6 @@
       "name": "Earthquakes",
       "change": -33
     },
-    "observationCount": 128
+    "observationCount": 129
   }
 }
