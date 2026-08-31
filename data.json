@@ -1,5 +1,5 @@
 {
-  "updated": "August 30, 2026 at 5:09 PM EDT",
+  "updated": "August 31, 2026 at 1:40 AM EDT",
   "sourceGroups": 6,
   "overall": {
     "score": 79,
@@ -58,14 +58,14 @@
         "Networks"
       ],
       "status": "partial",
-      "lastObserved": "2026-08-30T21:09:35+00:00",
+      "lastObserved": "2026-08-31T05:38:23+00:00",
       "sourceDetails": [
         {
           "id": "nws-alerts",
           "name": "National Weather Service active alerts",
           "url": "https://api.weather.gov/alerts/active",
-          "observed": "2026-08-30T21:09:35+00:00",
-          "detail": "Weather component: 343 active alerts; 35 severe or extreme."
+          "observed": "2026-08-31T05:38:23+00:00",
+          "detail": "Weather component: 373 active alerts; 22 severe or extreme."
         }
       ],
       "level": "Elevated"
@@ -120,41 +120,41 @@
         "Regional reports"
       ],
       "status": "partial",
-      "lastObserved": "2026-08-30T21:09:35+00:00",
+      "lastObserved": "2026-08-31T05:38:23+00:00",
       "sourceDetails": [
         {
           "id": "nws-alerts",
           "name": "National Weather Service active alerts",
           "url": "https://api.weather.gov/alerts/active",
-          "observed": "2026-08-30T21:09:35+00:00",
-          "detail": "Weather component: 343 active alerts; 35 severe or extreme."
+          "observed": "2026-08-31T05:38:23+00:00",
+          "detail": "Weather component: 373 active alerts; 22 severe or extreme."
         }
       ],
       "level": "Elevated"
     },
     {
       "name": "Weather",
-      "score": 85,
-      "delta": 11,
+      "score": 81,
+      "delta": -4,
       "summary": "National weather pressure is calculated from active official alerts.",
-      "changed": "There are 343 active actual alerts, including 35 severe or extreme alerts.",
+      "changed": "There are 373 active actual alerts, including 22 severe or extreme alerts.",
       "matters": "Widespread or severe weather can affect travel, utilities, emergency response, and household safety.",
       "confidence": "Moderate-high — direct NWS feed; alert counts do not measure realized damage.",
       "sources": [
         "National Weather Service active alerts"
       ],
       "status": "live",
-      "lastObserved": "2026-08-30T21:09:35+00:00",
+      "lastObserved": "2026-08-31T05:38:23+00:00",
       "sourceDetails": [
         {
           "id": "nws-alerts",
           "name": "National Weather Service active alerts",
           "url": "https://api.weather.gov/alerts/active",
-          "observed": "2026-08-30T21:09:35+00:00",
-          "detail": "343 active actual alerts; 35 severe or extreme."
+          "observed": "2026-08-31T05:38:23+00:00",
+          "detail": "373 active actual alerts; 22 severe or extreme."
         }
       ],
-      "level": "Severe"
+      "level": "Elevated"
     },
     {
       "name": "Earthquakes",
@@ -168,13 +168,13 @@
         "USGS significant earthquakes, past week"
       ],
       "status": "live",
-      "lastObserved": "2026-08-30T21:09:29.000Z",
+      "lastObserved": "2026-08-31T05:40:09.000Z",
       "sourceDetails": [
         {
           "id": "usgs-earthquakes",
           "name": "USGS significant earthquakes, past week",
           "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_week.geojson",
-          "observed": "2026-08-30T21:09:29.000Z",
+          "observed": "2026-08-31T05:40:09.000Z",
           "detail": "2 significant events; maximum magnitude 5.2."
         }
       ],
@@ -257,7 +257,7 @@
     "Missing sources reduce confidence rather than being silently replaced.",
     "Some categories use public proxy indicators because no single authoritative measure exists."
   ],
-  "generatedAt": "2026-08-30T21:09:37.159Z",
+  "generatedAt": "2026-08-31T05:40:42.727Z",
   "sourceHealth": {
     "successful": 4,
     "failed": 2,
@@ -273,21 +273,21 @@
     ]
   },
   "intelligence": {
-    "generatedAt": "2026-08-30T21:09:37.159Z",
+    "generatedAt": "2026-08-31T05:40:42.727Z",
     "method": "Structured deterministic synthesis v1",
-    "direction": "Higher pressure",
+    "direction": "Broadly stable",
     "title": "Weather is the leading measurable driver",
-    "summary": "Higher pressure. 1 evidence-backed driver account for the most meaningful movement in this refresh. The strongest measured change is weather, which rose sharply.",
+    "summary": "Broadly stable. 1 evidence-backed driver account for the most meaningful movement in this refresh. The strongest measured change is weather, which edged lower.",
     "drivers": [
       {
         "category": "Weather",
-        "change": 11,
-        "score": 85,
-        "weightedImpact": 9.9,
-        "explanation": "Weather rose sharply to 85/100. There are 343 active actual alerts, including 35 severe or extreme alerts.",
+        "change": -4,
+        "score": 81,
+        "weightedImpact": 3.6,
+        "explanation": "Weather edged lower to 81/100. There are 373 active actual alerts, including 22 severe or extreme alerts.",
         "sourceName": "National Weather Service active alerts",
         "sourceUrl": "https://api.weather.gov/alerts/active",
-        "observed": "2026-08-30T21:09:35+00:00"
+        "observed": "2026-08-31T05:38:23+00:00"
       }
     ],
     "audit": {
@@ -298,7 +298,7 @@
   },
   "analytics": {
     "sevenDayChange": -5,
-    "thirtyDayChange": -2,
+    "thirtyDayChange": -3,
     "volatility": 3.7,
     "biggestMover": {
       "name": "Earthquakes",
@@ -308,6 +308,6 @@
       "name": "Earthquakes",
       "change": -23
     },
-    "observationCount": 156
+    "observationCount": 157
   }
 }
