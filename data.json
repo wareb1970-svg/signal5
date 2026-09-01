@@ -1,5 +1,5 @@
 {
-  "updated": "September 1, 2026 at 1:14 AM EDT",
+  "updated": "September 1, 2026 at 7:42 AM EDT",
   "sourceGroups": 6,
   "overall": {
     "score": 79,
@@ -58,14 +58,14 @@
         "Networks"
       ],
       "status": "partial",
-      "lastObserved": "2026-09-01T05:12:23+00:00",
+      "lastObserved": "2026-09-01T11:37:37+00:00",
       "sourceDetails": [
         {
           "id": "nws-alerts",
           "name": "National Weather Service active alerts",
           "url": "https://api.weather.gov/alerts/active",
-          "observed": "2026-09-01T05:12:23+00:00",
-          "detail": "Weather component: 389 active alerts; 30 severe or extreme."
+          "observed": "2026-09-01T11:37:37+00:00",
+          "detail": "Weather component: 432 active alerts; 29 severe or extreme."
         }
       ],
       "level": "Elevated"
@@ -120,14 +120,14 @@
         "Regional reports"
       ],
       "status": "partial",
-      "lastObserved": "2026-09-01T05:12:23+00:00",
+      "lastObserved": "2026-09-01T11:37:37+00:00",
       "sourceDetails": [
         {
           "id": "nws-alerts",
           "name": "National Weather Service active alerts",
           "url": "https://api.weather.gov/alerts/active",
-          "observed": "2026-09-01T05:12:23+00:00",
-          "detail": "Weather component: 389 active alerts; 30 severe or extreme."
+          "observed": "2026-09-01T11:37:37+00:00",
+          "detail": "Weather component: 432 active alerts; 29 severe or extreme."
         }
       ],
       "level": "Elevated"
@@ -135,23 +135,23 @@
     {
       "name": "Weather",
       "score": 84,
-      "delta": -4,
+      "delta": 0,
       "summary": "National weather pressure is calculated from active official alerts.",
-      "changed": "There are 389 active actual alerts, including 30 severe or extreme alerts.",
+      "changed": "There are 432 active actual alerts, including 29 severe or extreme alerts.",
       "matters": "Widespread or severe weather can affect travel, utilities, emergency response, and household safety.",
       "confidence": "Moderate-high — direct NWS feed; alert counts do not measure realized damage.",
       "sources": [
         "National Weather Service active alerts"
       ],
       "status": "live",
-      "lastObserved": "2026-09-01T05:12:23+00:00",
+      "lastObserved": "2026-09-01T11:37:37+00:00",
       "sourceDetails": [
         {
           "id": "nws-alerts",
           "name": "National Weather Service active alerts",
           "url": "https://api.weather.gov/alerts/active",
-          "observed": "2026-09-01T05:12:23+00:00",
-          "detail": "389 active actual alerts; 30 severe or extreme."
+          "observed": "2026-09-01T11:37:37+00:00",
+          "detail": "432 active actual alerts; 29 severe or extreme."
         }
       ],
       "level": "Elevated"
@@ -159,7 +159,7 @@
     {
       "name": "Earthquakes",
       "score": 24,
-      "delta": -6,
+      "delta": 0,
       "summary": "Seismic pressure reflects significant earthquakes reported during the past week.",
       "changed": "USGS reports 1 significant earthquakes; the largest magnitude is 5.2.",
       "matters": "Significant earthquakes can create localized life-safety, infrastructure, and supply-chain consequences.",
@@ -168,13 +168,13 @@
         "USGS significant earthquakes, past week"
       ],
       "status": "live",
-      "lastObserved": "2026-09-01T05:14:22.000Z",
+      "lastObserved": "2026-09-01T11:42:24.000Z",
       "sourceDetails": [
         {
           "id": "usgs-earthquakes",
           "name": "USGS significant earthquakes, past week",
           "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_week.geojson",
-          "observed": "2026-09-01T05:14:22.000Z",
+          "observed": "2026-09-01T11:42:24.000Z",
           "detail": "1 significant events; maximum magnitude 5.2."
         }
       ],
@@ -209,21 +209,21 @@
       "score": 100,
       "delta": 0,
       "summary": "Space-weather pressure uses recent NOAA SWPC alert products.",
-      "changed": "NOAA SWPC issued 19 alert products during the past seven days.",
+      "changed": "NOAA SWPC issued 15 alert products during the past seven days.",
       "matters": "Strong geomagnetic and solar activity can affect radio, navigation, satellites, and some power-grid operations.",
       "confidence": "Moderate-high — official NOAA feed; product counts are a proxy for operational severity.",
       "sources": [
         "NOAA Space Weather Prediction Center alerts"
       ],
       "status": "live",
-      "lastObserved": "2026-08-31 11:47:00.727",
+      "lastObserved": "2026-09-01 07:37:17.493",
       "sourceDetails": [
         {
           "id": "noaa-swpc-alerts",
           "name": "NOAA Space Weather Prediction Center alerts",
           "url": "https://services.swpc.noaa.gov/products/alerts.json",
-          "observed": "2026-08-31 11:47:00.727",
-          "detail": "19 products issued in seven days; 14 matched alert or warning language."
+          "observed": "2026-09-01 07:37:17.493",
+          "detail": "15 products issued in seven days; 12 matched alert or warning language."
         }
       ],
       "level": "Severe"
@@ -257,7 +257,7 @@
     "Missing sources reduce confidence rather than being silently replaced.",
     "Some categories use public proxy indicators because no single authoritative measure exists."
   ],
-  "generatedAt": "2026-09-01T05:14:21.860Z",
+  "generatedAt": "2026-09-01T11:42:24.393Z",
   "sourceHealth": {
     "successful": 4,
     "failed": 2,
@@ -273,42 +273,21 @@
     ]
   },
   "intelligence": {
-    "generatedAt": "2026-09-01T05:14:21.860Z",
+    "generatedAt": "2026-09-01T11:42:24.393Z",
     "method": "Structured deterministic synthesis v1",
     "direction": "Broadly stable",
-    "title": "Earthquakes is the leading measurable driver",
-    "summary": "Broadly stable. 2 evidence-backed drivers account for the most meaningful movement in this refresh. The strongest measured change is earthquakes, which moved lower.",
-    "drivers": [
-      {
-        "category": "Earthquakes",
-        "change": -6,
-        "score": 24,
-        "weightedImpact": 6,
-        "explanation": "Earthquakes moved lower to 24/100. USGS reports 1 significant earthquakes; the largest magnitude is 5.2.",
-        "sourceName": "USGS significant earthquakes, past week",
-        "sourceUrl": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_week.geojson",
-        "observed": "2026-09-01T05:14:22.000Z"
-      },
-      {
-        "category": "Weather",
-        "change": -4,
-        "score": 84,
-        "weightedImpact": 3.6,
-        "explanation": "Weather edged lower to 84/100. There are 389 active actual alerts, including 30 severe or extreme alerts.",
-        "sourceName": "National Weather Service active alerts",
-        "sourceUrl": "https://api.weather.gov/alerts/active",
-        "observed": "2026-09-01T05:12:23+00:00"
-      }
-    ],
+    "title": "No single category is driving the dashboard",
+    "summary": "Broadly stable. Current score changes are too small to support a stronger assessment.",
+    "drivers": [],
     "audit": {
-      "driverCount": 2,
+      "driverCount": 0,
       "activeCategoryCount": 10,
       "failedSourceGroups": 2
     }
   },
   "analytics": {
-    "sevenDayChange": -5,
-    "thirtyDayChange": -4,
+    "sevenDayChange": -4,
+    "thirtyDayChange": -5,
     "volatility": 3.8,
     "biggestMover": {
       "name": "Earthquakes",
@@ -318,6 +297,6 @@
       "name": "Earthquakes",
       "change": -29
     },
-    "observationCount": 160
+    "observationCount": 161
   }
 }
