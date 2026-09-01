@@ -1,5 +1,5 @@
 {
-  "updated": "September 1, 2026 at 7:42 AM EDT",
+  "updated": "September 1, 2026 at 12:42 PM EDT",
   "sourceGroups": 6,
   "overall": {
     "score": 79,
@@ -46,7 +46,7 @@
     },
     {
       "name": "Infrastructure",
-      "score": 84,
+      "score": 83,
       "delta": 0,
       "summary": "Most monitored systems remain within normal operating ranges.",
       "changed": "Localized interruptions rose, while national-level reliability remained stable.",
@@ -58,14 +58,14 @@
         "Networks"
       ],
       "status": "partial",
-      "lastObserved": "2026-09-01T11:37:37+00:00",
+      "lastObserved": "2026-09-01T16:37:35+00:00",
       "sourceDetails": [
         {
           "id": "nws-alerts",
           "name": "National Weather Service active alerts",
           "url": "https://api.weather.gov/alerts/active",
-          "observed": "2026-09-01T11:37:37+00:00",
-          "detail": "Weather component: 432 active alerts; 29 severe or extreme."
+          "observed": "2026-09-01T16:37:35+00:00",
+          "detail": "Weather component: 305 active alerts; 30 severe or extreme."
         }
       ],
       "level": "Elevated"
@@ -120,38 +120,38 @@
         "Regional reports"
       ],
       "status": "partial",
-      "lastObserved": "2026-09-01T11:37:37+00:00",
+      "lastObserved": "2026-09-01T16:37:35+00:00",
       "sourceDetails": [
         {
           "id": "nws-alerts",
           "name": "National Weather Service active alerts",
           "url": "https://api.weather.gov/alerts/active",
-          "observed": "2026-09-01T11:37:37+00:00",
-          "detail": "Weather component: 432 active alerts; 29 severe or extreme."
+          "observed": "2026-09-01T16:37:35+00:00",
+          "detail": "Weather component: 305 active alerts; 30 severe or extreme."
         }
       ],
       "level": "Elevated"
     },
     {
       "name": "Weather",
-      "score": 84,
-      "delta": 0,
+      "score": 83,
+      "delta": -1,
       "summary": "National weather pressure is calculated from active official alerts.",
-      "changed": "There are 432 active actual alerts, including 29 severe or extreme alerts.",
+      "changed": "There are 305 active actual alerts, including 30 severe or extreme alerts.",
       "matters": "Widespread or severe weather can affect travel, utilities, emergency response, and household safety.",
       "confidence": "Moderate-high — direct NWS feed; alert counts do not measure realized damage.",
       "sources": [
         "National Weather Service active alerts"
       ],
       "status": "live",
-      "lastObserved": "2026-09-01T11:37:37+00:00",
+      "lastObserved": "2026-09-01T16:37:35+00:00",
       "sourceDetails": [
         {
           "id": "nws-alerts",
           "name": "National Weather Service active alerts",
           "url": "https://api.weather.gov/alerts/active",
-          "observed": "2026-09-01T11:37:37+00:00",
-          "detail": "432 active actual alerts; 29 severe or extreme."
+          "observed": "2026-09-01T16:37:35+00:00",
+          "detail": "305 active actual alerts; 30 severe or extreme."
         }
       ],
       "level": "Elevated"
@@ -168,13 +168,13 @@
         "USGS significant earthquakes, past week"
       ],
       "status": "live",
-      "lastObserved": "2026-09-01T11:42:24.000Z",
+      "lastObserved": "2026-09-01T16:41:20.000Z",
       "sourceDetails": [
         {
           "id": "usgs-earthquakes",
           "name": "USGS significant earthquakes, past week",
           "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_week.geojson",
-          "observed": "2026-09-01T11:42:24.000Z",
+          "observed": "2026-09-01T16:41:20.000Z",
           "detail": "1 significant events; maximum magnitude 5.2."
         }
       ],
@@ -257,7 +257,7 @@
     "Missing sources reduce confidence rather than being silently replaced.",
     "Some categories use public proxy indicators because no single authoritative measure exists."
   ],
-  "generatedAt": "2026-09-01T11:42:24.393Z",
+  "generatedAt": "2026-09-01T16:42:15.837Z",
   "sourceHealth": {
     "successful": 4,
     "failed": 2,
@@ -273,7 +273,7 @@
     ]
   },
   "intelligence": {
-    "generatedAt": "2026-09-01T11:42:24.393Z",
+    "generatedAt": "2026-09-01T16:42:15.837Z",
     "method": "Structured deterministic synthesis v1",
     "direction": "Broadly stable",
     "title": "No single category is driving the dashboard",
@@ -286,8 +286,8 @@
     }
   },
   "analytics": {
-    "sevenDayChange": -4,
-    "thirtyDayChange": -5,
+    "sevenDayChange": -3,
+    "thirtyDayChange": -4,
     "volatility": 3.8,
     "biggestMover": {
       "name": "Earthquakes",
@@ -297,6 +297,6 @@
       "name": "Earthquakes",
       "change": -29
     },
-    "observationCount": 161
+    "observationCount": 162
   }
 }
