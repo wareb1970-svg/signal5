@@ -1,5 +1,5 @@
 {
-  "updated": "September 3, 2026 at 12:36 AM EDT",
+  "updated": "September 3, 2026 at 7:19 AM EDT",
   "sourceGroups": 6,
   "overall": {
     "score": 79,
@@ -46,7 +46,7 @@
     },
     {
       "name": "Infrastructure",
-      "score": 86,
+      "score": 87,
       "delta": 0,
       "summary": "Most monitored systems remain within normal operating ranges.",
       "changed": "Localized interruptions rose, while national-level reliability remained stable.",
@@ -58,14 +58,14 @@
         "Networks"
       ],
       "status": "partial",
-      "lastObserved": "2026-09-03T04:35:44+00:00",
+      "lastObserved": "2026-09-03T11:18:52+00:00",
       "sourceDetails": [
         {
           "id": "nws-alerts",
           "name": "National Weather Service active alerts",
           "url": "https://api.weather.gov/alerts/active",
-          "observed": "2026-09-03T04:35:44+00:00",
-          "detail": "Weather component: 285 active alerts; 53 severe or extreme."
+          "observed": "2026-09-03T11:18:52+00:00",
+          "detail": "Weather component: 291 active alerts; 50 severe or extreme."
         }
       ],
       "level": "Severe"
@@ -120,14 +120,14 @@
         "Regional reports"
       ],
       "status": "partial",
-      "lastObserved": "2026-09-03T04:35:44+00:00",
+      "lastObserved": "2026-09-03T11:18:52+00:00",
       "sourceDetails": [
         {
           "id": "nws-alerts",
           "name": "National Weather Service active alerts",
           "url": "https://api.weather.gov/alerts/active",
-          "observed": "2026-09-03T04:35:44+00:00",
-          "detail": "Weather component: 285 active alerts; 53 severe or extreme."
+          "observed": "2026-09-03T11:18:52+00:00",
+          "detail": "Weather component: 291 active alerts; 50 severe or extreme."
         }
       ],
       "level": "Severe"
@@ -135,23 +135,23 @@
     {
       "name": "Weather",
       "score": 87,
-      "delta": -1,
+      "delta": 0,
       "summary": "National weather pressure is calculated from active official alerts.",
-      "changed": "There are 285 active actual alerts, including 53 severe or extreme alerts.",
+      "changed": "There are 291 active actual alerts, including 50 severe or extreme alerts.",
       "matters": "Widespread or severe weather can affect travel, utilities, emergency response, and household safety.",
       "confidence": "Moderate-high — direct NWS feed; alert counts do not measure realized damage.",
       "sources": [
         "National Weather Service active alerts"
       ],
       "status": "live",
-      "lastObserved": "2026-09-03T04:35:44+00:00",
+      "lastObserved": "2026-09-03T11:18:52+00:00",
       "sourceDetails": [
         {
           "id": "nws-alerts",
           "name": "National Weather Service active alerts",
           "url": "https://api.weather.gov/alerts/active",
-          "observed": "2026-09-03T04:35:44+00:00",
-          "detail": "285 active actual alerts; 53 severe or extreme."
+          "observed": "2026-09-03T11:18:52+00:00",
+          "detail": "291 active actual alerts; 50 severe or extreme."
         }
       ],
       "level": "Severe"
@@ -168,13 +168,13 @@
         "USGS significant earthquakes, past week"
       ],
       "status": "live",
-      "lastObserved": "2026-09-03T04:36:45.000Z",
+      "lastObserved": "2026-09-03T11:18:37.000Z",
       "sourceDetails": [
         {
           "id": "usgs-earthquakes",
           "name": "USGS significant earthquakes, past week",
           "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_week.geojson",
-          "observed": "2026-09-03T04:36:45.000Z",
+          "observed": "2026-09-03T11:18:37.000Z",
           "detail": "0 significant events; maximum magnitude 0.0."
         }
       ],
@@ -216,13 +216,13 @@
         "NOAA Space Weather Prediction Center alerts"
       ],
       "status": "live",
-      "lastObserved": "2026-09-02 19:55:34.340",
+      "lastObserved": "2026-09-03 10:31:48.890",
       "sourceDetails": [
         {
           "id": "noaa-swpc-alerts",
           "name": "NOAA Space Weather Prediction Center alerts",
           "url": "https://services.swpc.noaa.gov/products/alerts.json",
-          "observed": "2026-09-02 19:55:34.340",
+          "observed": "2026-09-03 10:31:48.890",
           "detail": "13 products issued in seven days; 13 matched alert or warning language."
         }
       ],
@@ -257,7 +257,7 @@
     "Missing sources reduce confidence rather than being silently replaced.",
     "Some categories use public proxy indicators because no single authoritative measure exists."
   ],
-  "generatedAt": "2026-09-03T04:36:50.941Z",
+  "generatedAt": "2026-09-03T11:19:16.842Z",
   "sourceHealth": {
     "successful": 4,
     "failed": 2,
@@ -273,7 +273,7 @@
     ]
   },
   "intelligence": {
-    "generatedAt": "2026-09-03T04:36:50.941Z",
+    "generatedAt": "2026-09-03T11:19:16.842Z",
     "method": "Structured deterministic synthesis v1",
     "direction": "Broadly stable",
     "title": "No single category is driving the dashboard",
@@ -287,8 +287,8 @@
   },
   "analytics": {
     "sevenDayChange": -8,
-    "thirtyDayChange": 0,
-    "volatility": 4,
+    "thirtyDayChange": 7,
+    "volatility": 3.9,
     "biggestMover": {
       "name": "Earthquakes",
       "change": -50
@@ -297,6 +297,6 @@
       "name": "Earthquakes",
       "change": -50
     },
-    "observationCount": 168
+    "observationCount": 169
   }
 }
