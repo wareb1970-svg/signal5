@@ -4524,6 +4524,22 @@
         "Cybersecurity": 80,
         "Space Weather": 84
       }
+    },
+    {
+      "timestamp": "2026-10-04T05:58:31.002Z",
+      "overall": 74,
+      "categories": {
+        "Economy": 48,
+        "Supply Chains": 57,
+        "Infrastructure": 91,
+        "Conflict": 62,
+        "Energy": 51,
+        "Public Safety": 92,
+        "Weather": 91,
+        "Earthquakes": 27,
+        "Cybersecurity": 80,
+        "Space Weather": 64
+      }
     }
   ]
 }
