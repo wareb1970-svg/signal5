@@ -1,5 +1,5 @@
 {
-  "updated": "October 11, 2026 at 1:52 AM EDT",
+  "updated": "October 11, 2026 at 8:55 AM EDT",
   "sourceGroups": 6,
   "overall": {
     "score": 92,
@@ -46,7 +46,7 @@
     },
     {
       "name": "Infrastructure",
-      "score": 95,
+      "score": 94,
       "delta": 0,
       "summary": "Most monitored systems remain within normal operating ranges.",
       "changed": "Localized interruptions rose, while national-level reliability remained stable.",
@@ -58,14 +58,14 @@
         "Networks"
       ],
       "status": "partial",
-      "lastObserved": "2026-10-11T05:51:12+00:00",
+      "lastObserved": "2026-10-11T12:53:37+00:00",
       "sourceDetails": [
         {
           "id": "nws-alerts",
           "name": "National Weather Service active alerts",
           "url": "https://api.weather.gov/alerts/active",
-          "observed": "2026-10-11T05:51:12+00:00",
-          "detail": "Weather component: 502 active alerts; 76 severe or extreme."
+          "observed": "2026-10-11T12:53:37+00:00",
+          "detail": "Weather component: 532 active alerts; 68 severe or extreme."
         }
       ],
       "level": "Severe"
@@ -108,7 +108,7 @@
     },
     {
       "name": "Public Safety",
-      "score": 96,
+      "score": 95,
       "delta": 0,
       "summary": "No broad national shift is currently visible.",
       "changed": "Some regional measures rose, but the national pattern remains mixed.",
@@ -120,38 +120,38 @@
         "Regional reports"
       ],
       "status": "partial",
-      "lastObserved": "2026-10-11T05:51:12+00:00",
+      "lastObserved": "2026-10-11T12:53:37+00:00",
       "sourceDetails": [
         {
           "id": "nws-alerts",
           "name": "National Weather Service active alerts",
           "url": "https://api.weather.gov/alerts/active",
-          "observed": "2026-10-11T05:51:12+00:00",
-          "detail": "Weather component: 502 active alerts; 76 severe or extreme."
+          "observed": "2026-10-11T12:53:37+00:00",
+          "detail": "Weather component: 532 active alerts; 68 severe or extreme."
         }
       ],
       "level": "Severe"
     },
     {
       "name": "Weather",
-      "score": 94,
+      "score": 93,
       "delta": -1,
       "summary": "National weather pressure is calculated from active official alerts.",
-      "changed": "There are 502 active actual alerts, including 76 severe or extreme alerts.",
+      "changed": "There are 532 active actual alerts, including 68 severe or extreme alerts.",
       "matters": "Widespread or severe weather can affect travel, utilities, emergency response, and household safety.",
       "confidence": "Moderate-high — direct NWS feed; alert counts do not measure realized damage.",
       "sources": [
         "National Weather Service active alerts"
       ],
       "status": "live",
-      "lastObserved": "2026-10-11T05:51:12+00:00",
+      "lastObserved": "2026-10-11T12:53:37+00:00",
       "sourceDetails": [
         {
           "id": "nws-alerts",
           "name": "National Weather Service active alerts",
           "url": "https://api.weather.gov/alerts/active",
-          "observed": "2026-10-11T05:51:12+00:00",
-          "detail": "502 active actual alerts; 76 severe or extreme."
+          "observed": "2026-10-11T12:53:37+00:00",
+          "detail": "532 active actual alerts; 68 severe or extreme."
         }
       ],
       "level": "Severe"
@@ -168,13 +168,13 @@
         "USGS significant earthquakes, past week"
       ],
       "status": "live",
-      "lastObserved": "2026-10-11T05:52:02.000Z",
+      "lastObserved": "2026-10-11T12:55:42.000Z",
       "sourceDetails": [
         {
           "id": "usgs-earthquakes",
           "name": "USGS significant earthquakes, past week",
           "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_week.geojson",
-          "observed": "2026-10-11T05:52:02.000Z",
+          "observed": "2026-10-11T12:55:42.000Z",
           "detail": "6 significant events; maximum magnitude 7.7."
         }
       ],
@@ -209,7 +209,7 @@
       "score": 100,
       "delta": 0,
       "summary": "Space-weather pressure uses recent NOAA SWPC alert products.",
-      "changed": "NOAA SWPC issued 51 alert products during the past seven days.",
+      "changed": "NOAA SWPC issued 47 alert products during the past seven days.",
       "matters": "Strong geomagnetic and solar activity can affect radio, navigation, satellites, and some power-grid operations.",
       "confidence": "Moderate-high — official NOAA feed; product counts are a proxy for operational severity.",
       "sources": [
@@ -223,7 +223,7 @@
           "name": "NOAA Space Weather Prediction Center alerts",
           "url": "https://services.swpc.noaa.gov/products/alerts.json",
           "observed": "2026-10-11 04:57:50.150",
-          "detail": "51 products issued in seven days; 44 matched alert or warning language."
+          "detail": "47 products issued in seven days; 40 matched alert or warning language."
         }
       ],
       "level": "Severe"
@@ -257,7 +257,7 @@
     "Missing sources reduce confidence rather than being silently replaced.",
     "Some categories use public proxy indicators because no single authoritative measure exists."
   ],
-  "generatedAt": "2026-10-11T05:52:08.194Z",
+  "generatedAt": "2026-10-11T12:55:49.651Z",
   "sourceHealth": {
     "successful": 4,
     "failed": 2,
@@ -273,7 +273,7 @@
     ]
   },
   "intelligence": {
-    "generatedAt": "2026-10-11T05:52:08.194Z",
+    "generatedAt": "2026-10-11T12:55:49.651Z",
     "method": "Structured deterministic synthesis v1",
     "direction": "Broadly stable",
     "title": "No single category is driving the dashboard",
@@ -286,9 +286,9 @@
     }
   },
   "analytics": {
-    "sevenDayChange": 14,
-    "thirtyDayChange": 13,
-    "volatility": 4.6,
+    "sevenDayChange": 13,
+    "thirtyDayChange": 14,
+    "volatility": 4.7,
     "biggestMover": {
       "name": "Earthquakes",
       "change": 65
@@ -297,6 +297,6 @@
       "name": "Cybersecurity",
       "change": -5
     },
-    "observationCount": 304
+    "observationCount": 305
   }
 }
