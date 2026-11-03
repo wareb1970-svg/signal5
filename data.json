@@ -1,8 +1,8 @@
 {
-  "updated": "November 2, 2026 at 11:07 AM EST",
+  "updated": "November 2, 2026 at 8:01 PM EST",
   "sourceGroups": 6,
   "overall": {
-    "score": 87,
+    "score": 86,
     "level": "Severe",
     "summary": "4 categories are live and 2 are partial. 2 source groups are unavailable.",
     "confidence": "Moderate"
@@ -46,7 +46,7 @@
     },
     {
       "name": "Infrastructure",
-      "score": 95,
+      "score": 96,
       "delta": 0,
       "summary": "Most monitored systems remain within normal operating ranges.",
       "changed": "Localized interruptions rose, while national-level reliability remained stable.",
@@ -58,14 +58,14 @@
         "Networks"
       ],
       "status": "partial",
-      "lastObserved": "2026-11-02T16:06:21+00:00",
+      "lastObserved": "2026-11-03T01:00:00+00:00",
       "sourceDetails": [
         {
           "id": "nws-alerts",
           "name": "National Weather Service active alerts",
           "url": "https://api.weather.gov/alerts/active",
-          "observed": "2026-11-02T16:06:21+00:00",
-          "detail": "Weather component: 462 active alerts; 99 severe or extreme."
+          "observed": "2026-11-03T01:00:00+00:00",
+          "detail": "Weather component: 553 active alerts; 92 severe or extreme."
         }
       ],
       "level": "Severe"
@@ -108,7 +108,7 @@
     },
     {
       "name": "Public Safety",
-      "score": 94,
+      "score": 95,
       "delta": 0,
       "summary": "No broad national shift is currently visible.",
       "changed": "Some regional measures rose, but the national pattern remains mixed.",
@@ -120,38 +120,38 @@
         "Regional reports"
       ],
       "status": "partial",
-      "lastObserved": "2026-11-02T16:06:21+00:00",
+      "lastObserved": "2026-11-03T01:00:00+00:00",
       "sourceDetails": [
         {
           "id": "nws-alerts",
           "name": "National Weather Service active alerts",
           "url": "https://api.weather.gov/alerts/active",
-          "observed": "2026-11-02T16:06:21+00:00",
-          "detail": "Weather component: 462 active alerts; 99 severe or extreme."
+          "observed": "2026-11-03T01:00:00+00:00",
+          "detail": "Weather component: 553 active alerts; 92 severe or extreme."
         }
       ],
       "level": "Severe"
     },
     {
       "name": "Weather",
-      "score": 95,
-      "delta": -1,
+      "score": 96,
+      "delta": 1,
       "summary": "National weather pressure is calculated from active official alerts.",
-      "changed": "There are 462 active actual alerts, including 99 severe or extreme alerts.",
+      "changed": "There are 553 active actual alerts, including 92 severe or extreme alerts.",
       "matters": "Widespread or severe weather can affect travel, utilities, emergency response, and household safety.",
       "confidence": "Moderate-high — direct NWS feed; alert counts do not measure realized damage.",
       "sources": [
         "National Weather Service active alerts"
       ],
       "status": "live",
-      "lastObserved": "2026-11-02T16:06:21+00:00",
+      "lastObserved": "2026-11-03T01:00:00+00:00",
       "sourceDetails": [
         {
           "id": "nws-alerts",
           "name": "National Weather Service active alerts",
           "url": "https://api.weather.gov/alerts/active",
-          "observed": "2026-11-02T16:06:21+00:00",
-          "detail": "462 active actual alerts; 99 severe or extreme."
+          "observed": "2026-11-03T01:00:00+00:00",
+          "detail": "553 active actual alerts; 92 severe or extreme."
         }
       ],
       "level": "Severe"
@@ -168,13 +168,13 @@
         "USGS significant earthquakes, past week"
       ],
       "status": "live",
-      "lastObserved": "2026-11-02T16:07:02.000Z",
+      "lastObserved": "2026-11-03T01:01:12.000Z",
       "sourceDetails": [
         {
           "id": "usgs-earthquakes",
           "name": "USGS significant earthquakes, past week",
           "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_week.geojson",
-          "observed": "2026-11-02T16:07:02.000Z",
+          "observed": "2026-11-03T01:01:12.000Z",
           "detail": "1 significant events; maximum magnitude 6.4."
         }
       ],
@@ -182,10 +182,10 @@
     },
     {
       "name": "Cybersecurity",
-      "score": 95,
-      "delta": 0,
+      "score": 85,
+      "delta": -10,
       "summary": "Cyber pressure reflects new vulnerabilities confirmed as exploited in the wild.",
-      "changed": "CISA added 10 known exploited vulnerabilities in seven days and 33 in 30 days.",
+      "changed": "CISA added 8 known exploited vulnerabilities in seven days and 33 in 30 days.",
       "matters": "Newly exploited vulnerabilities increase patching urgency for affected organizations, but do not mean every user is exposed.",
       "confidence": "High for catalog additions — CISA is authoritative; the score is not a measure of all cyber incidents.",
       "sources": [
@@ -199,7 +199,7 @@
           "name": "CISA Known Exploited Vulnerabilities Catalog",
           "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
           "observed": "2026-10-30T17:02:45.3665Z",
-          "detail": "10 additions in seven days; 33 in 30 days; 0 marked known ransomware use."
+          "detail": "8 additions in seven days; 33 in 30 days; 0 marked known ransomware use."
         }
       ],
       "level": "Severe"
@@ -257,7 +257,7 @@
     "Missing sources reduce confidence rather than being silently replaced.",
     "Some categories use public proxy indicators because no single authoritative measure exists."
   ],
-  "generatedAt": "2026-11-02T16:07:12.640Z",
+  "generatedAt": "2026-11-03T01:01:08.483Z",
   "sourceHealth": {
     "successful": 4,
     "failed": 2,
@@ -273,14 +273,25 @@
     ]
   },
   "intelligence": {
-    "generatedAt": "2026-11-02T16:07:12.640Z",
+    "generatedAt": "2026-11-03T01:01:08.483Z",
     "method": "Structured deterministic synthesis v1",
     "direction": "Broadly stable",
-    "title": "No single category is driving the dashboard",
-    "summary": "Broadly stable. Current score changes are too small to support a stronger assessment.",
-    "drivers": [],
+    "title": "Cybersecurity is the leading measurable driver",
+    "summary": "Broadly stable. 1 evidence-backed driver account for the most meaningful movement in this refresh. The strongest measured change is cybersecurity, which fell sharply.",
+    "drivers": [
+      {
+        "category": "Cybersecurity",
+        "change": -10,
+        "score": 85,
+        "weightedImpact": 10,
+        "explanation": "Cybersecurity fell sharply to 85/100. CISA added 8 known exploited vulnerabilities in seven days and 33 in 30 days.",
+        "sourceName": "CISA Known Exploited Vulnerabilities Catalog",
+        "sourceUrl": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+        "observed": "2026-10-30T17:02:45.3665Z"
+      }
+    ],
     "audit": {
-      "driverCount": 0,
+      "driverCount": 1,
       "activeCategoryCount": 10,
       "failedSourceGroups": 2
     }
@@ -288,15 +299,15 @@
   "analytics": {
     "sevenDayChange": -2,
     "thirtyDayChange": 8,
-    "volatility": 6,
+    "volatility": 5.9,
     "biggestMover": {
       "name": "Earthquakes",
-      "change": -45
+      "change": -33
     },
     "biggestImprovement": {
       "name": "Earthquakes",
-      "change": -45
+      "change": -33
     },
-    "observationCount": 381
+    "observationCount": 382
   }
 }
