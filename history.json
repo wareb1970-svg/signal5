@@ -6780,6 +6780,22 @@
         "Cybersecurity": 90,
         "Space Weather": 81
       }
+    },
+    {
+      "timestamp": "2026-11-22T19:44:31.053Z",
+      "overall": 84,
+      "categories": {
+        "Economy": 48,
+        "Supply Chains": 57,
+        "Infrastructure": 84,
+        "Conflict": 62,
+        "Energy": 51,
+        "Public Safety": 84,
+        "Weather": 84,
+        "Earthquakes": 84,
+        "Cybersecurity": 90,
+        "Space Weather": 79
+      }
     }
   ]
 }
